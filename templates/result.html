@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Skill Analysis - SkillBridge</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/result.css') }}">
+
+    <style>
+
+        /* =====================================================
+           SKILLBRIDGE NAVBAR
+        ====================================================== */
+
+        .skillbridge-navbar {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 70px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 40px;
+
+            background: rgba(0, 0, 0, 0.94);
+
+            border-bottom: 2px solid #ffffff;
+
+            z-index: 9999;
+
+            backdrop-filter: blur(8px);
+        }
+
+
+        .navbar-logo {
+
+            font-family: 'Anton', Impact, sans-serif;
+
+            font-size: 26px;
+
+            font-style: italic;
+
+            letter-spacing: 1px;
+
+            transform: skew(-8deg);
+
+            color: #ffffff;
+        }
+
+
+        .navbar-logo span {
+
+            color: #d90000;
+
+            margin-left: 4px;
+        }
+
+
+        .navbar-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+
+        .navbar-link {
+
+            position: relative;
+
+            padding: 10px 14px;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            letter-spacing: 1.5px;
+
+            transition:
+                color 0.2s ease,
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+
+        .navbar-link::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 12px;
+            right: 12px;
+
+            bottom: 4px;
+
+            height: 3px;
+
+            background: #d90000;
+
+            transform: scaleX(0);
+
+            transform-origin: left;
+
+            transition:
+                transform 0.2s ease;
+        }
+
+
+        .navbar-link:hover {
+
+            background: #d90000;
+
+            transform: skew(-8deg);
+        }
+
+
+        .navbar-link:hover::after,
+        .navbar-link.active::after {
+
+            transform: scaleX(1);
+        }
+
+
+        /* =====================================================
+           RESULT PAGE OFFSET
+        ====================================================== */
+
+        .result-page {
+
+            padding-top: 100px;
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 650px) {
+
+            .skillbridge-navbar {
+
+                height: 60px;
+
+                padding: 0 15px;
+            }
+
+
+            .navbar-logo {
+
+                font-size: 20px;
+            }
+
+
+            .navbar-links {
+
+                gap: 2px;
+            }
+
+
+            .navbar-link {
+
+                padding: 8px 7px;
+
+                font-size: 8px;
+
+                letter-spacing: 0.8px;
+            }
+
+
+            .navbar-link::after {
+
+                left: 7px;
+                right: 7px;
+            }
+
+
+            .result-page {
+
+                padding-top: 85px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <nav class="skillbridge-navbar">
+
+        <div class="navbar-logo">
+
+            SKILL<span>BRIDGE</span>
+
+        </div>
+
+
+        <div class="navbar-links">
+
+            <a
+                href="{{ url_for('home') }}"
+                class="navbar-link">
+
+                HOME
+
+            </a>
+
+
+            <a
+                href="{{ url_for('assessment') }}"
+                class="navbar-link active">
+
+                ASSESSMENT
+
+            </a>
+
+
+            <a
+                href="{{ url_for(
+                    'learning',
+                    career=career_result.career
+                ) }}"
+                class="navbar-link">
+
+                ROADMAP
+
+            </a>
+
+
+            <a
+                href="{{ url_for('progress') }}"
+                class="navbar-link">
+
+                PROGRESS
+
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         RESULT PAGE
+    ====================================================== -->
+
+    <main class="result-page">
+
+        <div class="result-container">
+
+
+            <!-- =================================================
+                 LABEL
+            ================================================== -->
+
+            <div class="result-label">
+
+                SKILLBRIDGE // AI ANALYSIS COMPLETE
+
+            </div>
+
+
+
+            <!-- =================================================
+                 GREETING
+            ================================================== -->
+
+            <h1>
+
+                HELLO,
+
+                <span>
+
+                    {{ username.upper() }}
+
+                </span>
+
+            </h1>
+
+
+            <p class="result-intro">
+
+                AI has analyzed your current skills.
+                Let's see your strengths and what you should improve.
+
+            </p>
+
+
+
+            <!-- =================================================
+                 OVERALL SCORE
+            ================================================== -->
+
+            <section class="analysis-card">
+
+                <div class="analysis-title">
+
+                    AI SKILL ANALYSIS
+
+                </div>
+
+
+                <div class="average-score">
+
+                    {{ skill_analysis.average }}%
+
+                </div>
+
+
+                <div class="score-info">
+
+
+                    <div>
+
+                        <small>
+
+                            STRONGEST SKILL
+
+                        </small>
+
+
+                        <strong>
+
+                            {% if skill_analysis.strongest %}
+
+                                {{
+                                    skill_analysis.strongest
+                                    .replace('_', ' ')
+                                    .title()
+                                }}
+
+                            {% else %}
+
+                                -
+
+                            {% endif %}
+
+                        </strong>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <small>
+
+                            NEEDS IMPROVEMENT
+
+                        </small>
+
+
+                        <strong>
+
+                            {% if skill_analysis.weakest %}
+
+                                {{
+                                    skill_analysis.weakest
+                                    .replace('_', ' ')
+                                    .title()
+                                }}
+
+                            {% else %}
+
+                                -
+
+                            {% endif %}
+
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SKILL STATUS
+            ================================================== -->
+
+            <section class="career-card">
+
+                <div class="career-label">
+
+                    SKILL STATUS
+
+                </div>
+
+
+                {% if skill_analysis.skill_status %}
+
+
+                    {% for skill, data in skill_analysis.skill_status.items() %}
+
+
+                        <div class="skill-status">
+
+
+                            <div class="skill-status-top">
+
+                                <span>
+
+                                    {{
+                                        skill
+                                        .replace('_', ' ')
+                                        .title()
+                                    }}
+
+                                </span>
+
+
+                                <strong>
+
+                                    {{ data.score }}%
+
+                                </strong>
+
+                            </div>
+
+
+                            <div class="skill-bar">
+
+                                <div
+                                    class="skill-bar-fill"
+                                    style="width: {{ data.score }}%;">
+
+                                </div>
+
+                            </div>
+
+
+                            <small>
+
+                                {{ data.status }}
+
+                            </small>
+
+
+                        </div>
+
+
+                    {% endfor %}
+
+
+                {% endif %}
+
+            </section>
+
+
+
+            <!-- =================================================
+                 AI RECOMMENDATIONS
+            ================================================== -->
+
+            <section class="career-card">
+
+                <div class="career-label">
+
+                    AI SKILL RECOMMENDATION
+
+                </div>
+
+
+                {% if skill_analysis.recommendations %}
+
+
+                    {% for recommendation in skill_analysis.recommendations %}
+
+
+                        <div class="recommendation">
+
+
+                            <h3>
+
+                                {{
+                                    recommendation.skill
+                                    .replace('_', ' ')
+                                    .title()
+                                }}
+
+                            </h3>
+
+
+                            <strong>
+
+                                PRIORITY:
+                                {{ recommendation.priority }}
+
+                            </strong>
+
+
+                            <p>
+
+                                {{ recommendation.message }}
+
+                            </p>
+
+
+                        </div>
+
+
+                    {% endfor %}
+
+
+                {% else %}
+
+
+                    <p>
+
+                        Semua skill kamu sudah berada pada
+                        tingkat yang baik.
+                        Tetap latihan untuk meningkatkan
+                        kemampuanmu.
+
+                    </p>
+
+
+                {% endif %}
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CAREER RECOMMENDATION
+            ================================================== -->
+
+            <section class="career-card">
+
+                <div class="career-label">
+
+                    AI CAREER RECOMMENDATION
+
+                </div>
+
+
+                <h2>
+
+                    {{
+                        career_result.career
+                        .replace('_', ' ')
+                        .upper()
+                    }}
+
+                </h2>
+
+
+                <p>
+
+                    Berdasarkan hasil analisis kemampuanmu,
+                    jalur ini memiliki kecocokan skill
+                    paling tinggi.
+
+                </p>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ACTION
+            ================================================== -->
+
+            <div class="result-action">
+
+
+                <a
+                    href="{{ url_for(
+                        'learning',
+                        career=career_result.career
+                    ) }}"
+                    class="continue-button">
+
+                    ENTER MY ROADMAP
+
+                    <span>→</span>
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>

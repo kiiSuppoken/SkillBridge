@@ -1,0 +1,1312 @@
+{
+    "software_engineer": {
+        "programming": {
+            "title": "Programming Fundamentals",
+            "description": "Pelajari dasar pemrograman dan cara berpikir seperti programmer.",
+
+            "material": {
+                "title": "Apa Itu Programming?",
+                "content": "Programming adalah proses memberikan instruksi kepada komputer agar dapat melakukan suatu tugas. Programmer menggunakan bahasa pemrograman seperti Python untuk membuat instruksi tersebut.",
+
+                "topics": [
+                    {
+                        "title": "Variable",
+                        "content": "Variable digunakan untuk menyimpan sebuah nilai di dalam program. Contohnya, nama dapat disimpan ke dalam variable bernama username."
+                    },
+                    {
+                        "title": "Data Type",
+                        "content": "Data type menentukan jenis data yang disimpan. Contohnya String untuk teks, Integer untuk bilangan bulat, dan Float untuk bilangan desimal."
+                    },
+                    {
+                        "title": "Contoh Python",
+                        "content": "Contoh penggunaan variable dan data type dalam Python.",
+                        "code": "username = \"Rici\"\nage = 16\nscore = 95.5"
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "VARIABLE RECRUIT",
+                    "description": "Apa fungsi variable dalam programming?",
+                    "answer": "menyimpan data",
+                    "xp": 100
+                },
+                {
+                    "title": "TYPE DETECTIVE",
+                    "description": "Apa data type yang digunakan untuk menyimpan teks di Python?",
+                    "answer": "string",
+                    "xp": 150
+                },
+                {
+                    "title": "DATA MIXER",
+                    "description": "Sebutkan data type yang digunakan untuk bilangan desimal di Python.",
+                    "answer": "float",
+                    "xp": 200
+                },
+                {
+                    "title": "PROFILE BUILDER",
+                    "description": "Buat variable bernama username yang berisi nama kamu.",
+                    "answer": "username",
+                    "xp": 250
+                }
+            ]
+        },
+
+        "algorithm": {
+            "title": "Algorithms & Problem Solving",
+            "description": "Latih kemampuan memecahkan masalah menggunakan algoritma.",
+
+            "material": {
+                "title": "Apa Itu Algoritma?",
+                "content": "Algoritma adalah urutan langkah yang sistematis untuk menyelesaikan sebuah masalah.",
+
+                "topics": [
+                    {
+                        "title": "Input",
+                        "content": "Input adalah data yang diberikan kepada program untuk diproses."
+                    },
+                    {
+                        "title": "Process",
+                        "content": "Process adalah langkah yang dilakukan untuk mengolah input."
+                    },
+                    {
+                        "title": "Output",
+                        "content": "Output adalah hasil yang diberikan setelah data diproses."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "ALGORITHM RECRUIT",
+                    "description": "Apa yang dimaksud dengan algoritma?",
+                    "answer": "urutan langkah",
+                    "xp": 100
+                },
+                {
+                    "title": "INPUT DETECTIVE",
+                    "description": "Apa nama data yang diberikan kepada program untuk diproses?",
+                    "answer": "input",
+                    "xp": 150
+                },
+                {
+                    "title": "PROCESS MASTER",
+                    "description": "Apa tahap yang mengolah input?",
+                    "answer": "process",
+                    "xp": 150
+                },
+                {
+                    "title": "OUTPUT BUILDER",
+                    "description": "Apa hasil yang diberikan setelah data diproses?",
+                    "answer": "output",
+                    "xp": 200
+                }
+            ]
+        },
+
+        "oop": {
+            "title": "Object-Oriented Programming",
+            "description": "Pelajari konsep class, object, inheritance, dan encapsulation.",
+
+            "material": {
+                "title": "Apa Itu OOP?",
+                "content": "Object-Oriented Programming adalah paradigma pemrograman yang menggunakan object dan class untuk menyusun program.",
+
+                "topics": [
+                    {
+                        "title": "Class",
+                        "content": "Class adalah blueprint atau cetak biru untuk membuat object."
+                    },
+                    {
+                        "title": "Object",
+                        "content": "Object adalah instance atau hasil dari sebuah class."
+                    },
+                    {
+                        "title": "Inheritance",
+                        "content": "Inheritance memungkinkan sebuah class mewarisi sifat dan fungsi dari class lain."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "CLASS RECRUIT",
+                    "description": "Apa yang dimaksud dengan class?",
+                    "answer": "blueprint",
+                    "xp": 150
+                },
+                {
+                    "title": "OBJECT DETECTIVE",
+                    "description": "Apa hasil atau instance dari sebuah class?",
+                    "answer": "object",
+                    "xp": 150
+                },
+                {
+                    "title": "INHERITANCE MASTER",
+                    "description": "Apa konsep ketika sebuah class mewarisi class lain?",
+                    "answer": "inheritance",
+                    "xp": 200
+                },
+                {
+                    "title": "OOP BUILDER",
+                    "description": "Sebutkan paradigma pemrograman yang menggunakan class dan object.",
+                    "answer": "object oriented",
+                    "xp": 200
+                }
+            ]
+        },
+
+        "database": {
+            "title": "Database Fundamentals",
+            "description": "Pelajari database, SQL, tabel, query, dan relasi data.",
+
+            "material": {
+                "title": "Apa Itu Database?",
+                "content": "Database adalah tempat untuk menyimpan dan mengelola data secara terstruktur.",
+
+                "topics": [
+                    {
+                        "title": "Table",
+                        "content": "Table digunakan untuk menyimpan data dalam bentuk baris dan kolom."
+                    },
+                    {
+                        "title": "SQL",
+                        "content": "SQL digunakan untuk berkomunikasi dan mengelola data dalam database."
+                    },
+                    {
+                        "title": "Query",
+                        "content": "Query adalah perintah yang digunakan untuk mengambil atau mengubah data."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "DATABASE RECRUIT",
+                    "description": "Apa tempat untuk menyimpan dan mengelola data secara terstruktur?",
+                    "answer": "database",
+                    "xp": 150
+                },
+                {
+                    "title": "TABLE DETECTIVE",
+                    "description": "Apa yang digunakan untuk menyimpan data dalam baris dan kolom?",
+                    "answer": "table",
+                    "xp": 150
+                },
+                {
+                    "title": "SQL MASTER",
+                    "description": "Apa bahasa yang digunakan untuk mengelola database?",
+                    "answer": "sql",
+                    "xp": 200
+                },
+                {
+                    "title": "QUERY BUILDER",
+                    "description": "Apa nama perintah yang digunakan untuk mengambil atau mengubah data?",
+                    "answer": "query",
+                    "xp": 200
+                }
+            ]
+        },
+
+        "project": {
+            "title": "Build Your First Project",
+            "description": "Gabungkan skill yang telah dipelajari ke dalam sebuah project.",
+
+            "material": {
+                "title": "Project Development",
+                "content": "Project membantu programmer menggabungkan berbagai konsep pemrograman menjadi sebuah aplikasi.",
+
+                "topics": [
+                    {
+                        "title": "Planning",
+                        "content": "Tentukan tujuan dan fitur project sebelum mulai membuatnya."
+                    },
+                    {
+                        "title": "Implementation",
+                        "content": "Implementasikan rancangan project menggunakan kode."
+                    },
+                    {
+                        "title": "Testing",
+                        "content": "Testing dilakukan untuk menemukan dan memperbaiki error."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "PROJECT PLANNER",
+                    "description": "Apa langkah awal sebelum membuat project?",
+                    "answer": "planning",
+                    "xp": 150
+                },
+                {
+                    "title": "CODE BUILDER",
+                    "description": "Apa proses menerapkan rancangan menjadi kode?",
+                    "answer": "implementation",
+                    "xp": 200
+                },
+                {
+                    "title": "BUG DETECTIVE",
+                    "description": "Apa proses untuk menemukan error dalam program?",
+                    "answer": "testing",
+                    "xp": 200
+                },
+                {
+                    "title": "PROJECT MASTER",
+                    "description": "Apa tujuan utama sebuah project programming?",
+                    "answer": "menyelesaikan masalah",
+                    "xp": 250
+                }
+            ]
+        }
+    },
+
+    "uiux": {
+        "design_basics": {
+            "title": "Design Fundamentals",
+            "description": "Pelajari prinsip dasar desain digital.",
+
+            "material": {
+                "title": "Apa Itu UI/UX Design?",
+                "content": "UI/UX Design berfokus pada bagaimana sebuah produk digital terlihat dan bagaimana pengguna berinteraksi dengannya.",
+
+                "topics": [
+                    {
+                        "title": "UI Design",
+                        "content": "UI atau User Interface berfokus pada tampilan visual seperti warna, tombol, layout, dan typography."
+                    },
+                    {
+                        "title": "UX Design",
+                        "content": "UX atau User Experience berfokus pada pengalaman pengguna ketika menggunakan sebuah produk."
+                    },
+                    {
+                        "title": "Visual Hierarchy",
+                        "content": "Visual hierarchy membantu pengguna mengetahui informasi mana yang harus dilihat terlebih dahulu."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "DESIGN RECRUIT",
+                    "description": "Apa kepanjangan dari UI?",
+                    "answer": "user interface",
+                    "xp": 100
+                },
+                {
+                    "title": "UX DETECTIVE",
+                    "description": "Apa yang menjadi fokus utama UX?",
+                    "answer": "pengalaman pengguna",
+                    "xp": 150
+                },
+                {
+                    "title": "LAYOUT HUNTER",
+                    "description": "Apa yang membantu pengguna menentukan informasi yang harus dilihat terlebih dahulu?",
+                    "answer": "visual hierarchy",
+                    "xp": 150
+                },
+                {
+                    "title": "DESIGN MASTER",
+                    "description": "Sebutkan bidang yang berfokus pada tampilan visual produk digital.",
+                    "answer": "ui design",
+                    "xp": 200
+                }
+            ]
+        },
+
+        "color": {
+            "title": "Color Theory",
+            "description": "Pelajari warna, kombinasi warna, contrast, dan visual hierarchy.",
+
+            "material": {
+                "title": "Color Theory",
+                "content": "Color theory membantu designer memilih dan menggabungkan warna secara efektif.",
+
+                "topics": [
+                    {
+                        "title": "Primary Color",
+                        "content": "Warna primer adalah warna dasar yang menjadi dasar berbagai kombinasi warna."
+                    },
+                    {
+                        "title": "Contrast",
+                        "content": "Contrast membantu membedakan elemen agar lebih mudah dilihat."
+                    },
+                    {
+                        "title": "Color Harmony",
+                        "content": "Color harmony adalah kombinasi warna yang terlihat seimbang dan menarik."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "COLOR RECRUIT",
+                    "description": "Apa yang digunakan untuk membedakan elemen agar lebih mudah dilihat?",
+                    "answer": "contrast",
+                    "xp": 100
+                },
+                {
+                    "title": "HARMONY HUNTER",
+                    "description": "Apa istilah untuk kombinasi warna yang terlihat seimbang?",
+                    "answer": "color harmony",
+                    "xp": 150
+                },
+                {
+                    "title": "COLOR MASTER",
+                    "description": "Apa istilah untuk warna dasar dalam color theory?",
+                    "answer": "primary color",
+                    "xp": 150
+                },
+                {
+                    "title": "VISUAL COLOR",
+                    "description": "Apa tujuan penggunaan contrast?",
+                    "answer": "membedakan elemen",
+                    "xp": 200
+                }
+            ]
+        },
+
+        "typography": {
+            "title": "Typography",
+            "description": "Pelajari penggunaan font, hierarchy, spacing, dan readability.",
+
+            "material": {
+                "title": "Apa Itu Typography?",
+                "content": "Typography adalah seni mengatur teks agar mudah dibaca dan terlihat sesuai dengan tujuan desain.",
+
+                "topics": [
+                    {
+                        "title": "Font",
+                        "content": "Font menentukan bentuk visual dari sebuah teks."
+                    },
+                    {
+                        "title": "Spacing",
+                        "content": "Spacing mengatur jarak antar teks dan elemen."
+                    },
+                    {
+                        "title": "Readability",
+                        "content": "Readability menunjukkan seberapa mudah sebuah teks dibaca."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "FONT RECRUIT",
+                    "description": "Apa yang menentukan bentuk visual dari teks?",
+                    "answer": "font",
+                    "xp": 100
+                },
+                {
+                    "title": "SPACING DETECTIVE",
+                    "description": "Apa yang mengatur jarak antar elemen?",
+                    "answer": "spacing",
+                    "xp": 150
+                },
+                {
+                    "title": "READABILITY MASTER",
+                    "description": "Apa istilah untuk kemudahan sebuah teks dibaca?",
+                    "answer": "readability",
+                    "xp": 150
+                },
+                {
+                    "title": "TYPE BUILDER",
+                    "description": "Apa bidang desain yang mengatur tampilan teks?",
+                    "answer": "typography",
+                    "xp": 200
+                }
+            ]
+        },
+
+        "wireframe": {
+            "title": "Wireframing",
+            "description": "Pelajari cara membuat struktur dan layout sebuah interface.",
+
+            "material": {
+                "title": "Apa Itu Wireframe?",
+                "content": "Wireframe adalah rancangan dasar struktur sebuah interface sebelum desain visual dibuat.",
+
+                "topics": [
+                    {
+                        "title": "Layout",
+                        "content": "Layout menentukan posisi dan susunan elemen dalam interface."
+                    },
+                    {
+                        "title": "Structure",
+                        "content": "Structure menentukan bagaimana informasi disusun."
+                    },
+                    {
+                        "title": "Prototype",
+                        "content": "Prototype dapat digunakan untuk menguji rancangan sebelum produk dibuat."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "WIREFRAME RECRUIT",
+                    "description": "Apa rancangan dasar struktur interface?",
+                    "answer": "wireframe",
+                    "xp": 100
+                },
+                {
+                    "title": "LAYOUT BUILDER",
+                    "description": "Apa yang menentukan posisi elemen dalam interface?",
+                    "answer": "layout",
+                    "xp": 150
+                },
+                {
+                    "title": "STRUCTURE DETECTIVE",
+                    "description": "Apa yang menentukan bagaimana informasi disusun?",
+                    "answer": "structure",
+                    "xp": 150
+                },
+                {
+                    "title": "WIREFRAME MASTER",
+                    "description": "Apa tujuan utama membuat wireframe?",
+                    "answer": "merancang struktur",
+                    "xp": 200
+                }
+            ]
+        },
+
+        "prototype": {
+            "title": "Interactive Prototype",
+            "description": "Buat prototype interaktif dari desain yang telah dibuat.",
+
+            "material": {
+                "title": "Interactive Prototype",
+                "content": "Prototype interaktif digunakan untuk mensimulasikan bagaimana pengguna berinteraksi dengan sebuah interface.",
+
+                "topics": [
+                    {
+                        "title": "Interaction",
+                        "content": "Interaction menunjukkan bagaimana pengguna berinteraksi dengan interface."
+                    },
+                    {
+                        "title": "Flow",
+                        "content": "Flow menunjukkan alur perpindahan pengguna dari satu halaman ke halaman lain."
+                    },
+                    {
+                        "title": "Testing",
+                        "content": "Testing prototype membantu menemukan masalah pada pengalaman pengguna."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "PROTOTYPE RECRUIT",
+                    "description": "Apa yang digunakan untuk mensimulasikan interaksi interface?",
+                    "answer": "prototype",
+                    "xp": 150
+                },
+                {
+                    "title": "FLOW DETECTIVE",
+                    "description": "Apa yang menunjukkan alur perpindahan antar halaman?",
+                    "answer": "flow",
+                    "xp": 150
+                },
+                {
+                    "title": "INTERACTION MASTER",
+                    "description": "Apa istilah untuk cara pengguna berinteraksi dengan interface?",
+                    "answer": "interaction",
+                    "xp": 200
+                },
+                {
+                    "title": "PROTOTYPE BUILDER",
+                    "description": "Apa proses untuk menemukan masalah pada prototype?",
+                    "answer": "testing",
+                    "xp": 250
+                }
+            ]
+        }
+    },
+
+    "data_analyst": {
+        "spreadsheet": {
+            "title": "Spreadsheet Fundamentals",
+            "description": "Pelajari dasar pengolahan data menggunakan spreadsheet.",
+
+            "material": {
+                "title": "Apa Itu Data Analysis?",
+                "content": "Data analysis adalah proses memeriksa dan mengolah data untuk menemukan informasi yang berguna.",
+
+                "topics": [
+                    {
+                        "title": "Dataset",
+                        "content": "Dataset adalah kumpulan data yang digunakan untuk dianalisis."
+                    },
+                    {
+                        "title": "Row dan Column",
+                        "content": "Row berisi satu baris data, sedangkan column menunjukkan jenis informasi yang disimpan."
+                    },
+                    {
+                        "title": "Data Cleaning",
+                        "content": "Data cleaning adalah proses memperbaiki atau menghapus data yang tidak sesuai."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "DATA RECRUIT",
+                    "description": "Apa kumpulan data yang digunakan untuk dianalisis?",
+                    "answer": "dataset",
+                    "xp": 100
+                },
+                {
+                    "title": "CELL DETECTIVE",
+                    "description": "Apa istilah untuk baris pada spreadsheet?",
+                    "answer": "row",
+                    "xp": 150
+                },
+                {
+                    "title": "COLUMN MASTER",
+                    "description": "Apa istilah untuk kolom pada spreadsheet?",
+                    "answer": "column",
+                    "xp": 150
+                },
+                {
+                    "title": "DATA CLEANER",
+                    "description": "Apa proses memperbaiki data yang tidak sesuai?",
+                    "answer": "data cleaning",
+                    "xp": 200
+                }
+            ]
+        },
+
+        "python_data": {
+            "title": "Python for Data",
+            "description": "Gunakan Python untuk mengolah dan memahami data.",
+
+            "material": {
+                "title": "Python for Data",
+                "content": "Python banyak digunakan untuk mengolah dan menganalisis data.",
+
+                "topics": [
+                    {
+                        "title": "Variable",
+                        "content": "Variable dapat digunakan untuk menyimpan data."
+                    },
+                    {
+                        "title": "List",
+                        "content": "List digunakan untuk menyimpan beberapa nilai dalam satu struktur."
+                    },
+                    {
+                        "title": "Data Processing",
+                        "content": "Python dapat digunakan untuk memproses data secara otomatis."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "PYTHON RECRUIT",
+                    "description": "Bahasa pemrograman yang sering digunakan untuk data analysis?",
+                    "answer": "python",
+                    "xp": 100
+                },
+                {
+                    "title": "LIST DETECTIVE",
+                    "description": "Apa struktur data Python yang dapat menyimpan banyak nilai?",
+                    "answer": "list",
+                    "xp": 150
+                },
+                {
+                    "title": "DATA PROCESSOR",
+                    "description": "Apa proses mengolah data menggunakan program?",
+                    "answer": "data processing",
+                    "xp": 150
+                },
+                {
+                    "title": "PYTHON DATA MASTER",
+                    "description": "Apa bahasa pemrograman yang digunakan untuk mengolah data?",
+                    "answer": "python",
+                    "xp": 200
+                }
+            ]
+        },
+
+        "pandas": {
+            "title": "Data Manipulation",
+            "description": "Pelajari konsep pengolahan data menggunakan Pandas.",
+
+            "material": {
+                "title": "Pandas",
+                "content": "Pandas adalah library Python yang banyak digunakan untuk manipulasi dan analisis data.",
+
+                "topics": [
+                    {
+                        "title": "DataFrame",
+                        "content": "DataFrame adalah struktur data berbentuk tabel pada Pandas."
+                    },
+                    {
+                        "title": "Series",
+                        "content": "Series adalah struktur data satu dimensi pada Pandas."
+                    },
+                    {
+                        "title": "Filtering",
+                        "content": "Filtering digunakan untuk memilih data berdasarkan kondisi tertentu."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "PANDAS RECRUIT",
+                    "description": "Apa library Python yang digunakan untuk manipulasi data?",
+                    "answer": "pandas",
+                    "xp": 100
+                },
+                {
+                    "title": "DATAFRAME DETECTIVE",
+                    "description": "Apa struktur data berbentuk tabel pada Pandas?",
+                    "answer": "dataframe",
+                    "xp": 150
+                },
+                {
+                    "title": "SERIES MASTER",
+                    "description": "Apa struktur data satu dimensi pada Pandas?",
+                    "answer": "series",
+                    "xp": 150
+                },
+                {
+                    "title": "FILTER BUILDER",
+                    "description": "Apa teknik untuk memilih data berdasarkan kondisi?",
+                    "answer": "filtering",
+                    "xp": 200
+                }
+            ]
+        },
+
+        "visualization": {
+            "title": "Data Visualization",
+            "description": "Pelajari cara mengubah data menjadi visualisasi yang mudah dipahami.",
+
+            "material": {
+                "title": "Data Visualization",
+                "content": "Data visualization mengubah data menjadi bentuk visual seperti chart dan grafik.",
+
+                "topics": [
+                    {
+                        "title": "Chart",
+                        "content": "Chart digunakan untuk menampilkan data dalam bentuk visual."
+                    },
+                    {
+                        "title": "Bar Chart",
+                        "content": "Bar chart cocok digunakan untuk membandingkan nilai."
+                    },
+                    {
+                        "title": "Line Chart",
+                        "content": "Line chart cocok digunakan untuk melihat perubahan atau tren."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "VISUAL RECRUIT",
+                    "description": "Apa yang digunakan untuk menampilkan data secara visual?",
+                    "answer": "chart",
+                    "xp": 100
+                },
+                {
+                    "title": "BAR DETECTIVE",
+                    "description": "Chart apa yang cocok untuk membandingkan nilai?",
+                    "answer": "bar chart",
+                    "xp": 150
+                },
+                {
+                    "title": "TREND MASTER",
+                    "description": "Chart apa yang cocok untuk melihat perubahan atau tren?",
+                    "answer": "line chart",
+                    "xp": 150
+                },
+                {
+                    "title": "DATA VISUAL BUILDER",
+                    "description": "Apa istilah proses mengubah data menjadi bentuk visual?",
+                    "answer": "data visualization",
+                    "xp": 200
+                }
+            ]
+        },
+
+        "data_analysis": {
+            "title": "Real Data Analysis",
+            "description": "Gunakan semua skill untuk melakukan analisis terhadap dataset.",
+
+            "material": {
+                "title": "Real Data Analysis",
+                "content": "Analisis data dilakukan dengan memahami dataset, membersihkan data, mengolahnya, dan mengambil kesimpulan.",
+
+                "topics": [
+                    {
+                        "title": "Explore",
+                        "content": "Pelajari struktur dan isi dataset."
+                    },
+                    {
+                        "title": "Clean",
+                        "content": "Bersihkan data yang tidak sesuai."
+                    },
+                    {
+                        "title": "Analyze",
+                        "content": "Analisis data untuk menemukan informasi penting."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "DATA EXPLORER",
+                    "description": "Apa tahap memahami isi dan struktur dataset?",
+                    "answer": "explore",
+                    "xp": 150
+                },
+                {
+                    "title": "DATA CLEANER",
+                    "description": "Apa tahap memperbaiki data yang tidak sesuai?",
+                    "answer": "clean",
+                    "xp": 200
+                },
+                {
+                    "title": "DATA ANALYST",
+                    "description": "Apa tahap menemukan informasi penting dari data?",
+                    "answer": "analyze",
+                    "xp": 250
+                },
+                {
+                    "title": "DATA MASTER",
+                    "description": "Apa tujuan utama data analysis?",
+                    "answer": "menemukan informasi",
+                    "xp": 250
+                }
+            ]
+        }
+    },
+
+    "cybersecurity": {
+        "security_basics": {
+            "title": "Security Fundamentals",
+            "description": "Pelajari dasar keamanan informasi.",
+
+            "material": {
+                "title": "Apa Itu Cybersecurity?",
+                "content": "Cybersecurity berfokus pada perlindungan perangkat, jaringan, aplikasi, dan data dari akses atau gangguan yang tidak diizinkan.",
+
+                "topics": [
+                    {
+                        "title": "Confidentiality",
+                        "content": "Confidentiality berarti informasi hanya dapat diakses oleh pihak yang memiliki izin."
+                    },
+                    {
+                        "title": "Integrity",
+                        "content": "Integrity berarti data tetap akurat dan tidak diubah secara tidak sah."
+                    },
+                    {
+                        "title": "Availability",
+                        "content": "Availability berarti sistem dan informasi tersedia ketika dibutuhkan."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "SECURITY RECRUIT",
+                    "description": "Apa prinsip keamanan yang memastikan informasi hanya dapat diakses pihak berizin?",
+                    "answer": "confidentiality",
+                    "xp": 100
+                },
+                {
+                    "title": "INTEGRITY DETECTIVE",
+                    "description": "Apa prinsip yang memastikan data tidak diubah secara tidak sah?",
+                    "answer": "integrity",
+                    "xp": 150
+                },
+                {
+                    "title": "AVAILABILITY MASTER",
+                    "description": "Apa prinsip yang memastikan sistem tersedia ketika dibutuhkan?",
+                    "answer": "availability",
+                    "xp": 150
+                },
+                {
+                    "title": "SECURITY BUILDER",
+                    "description": "Apa bidang yang berfokus pada perlindungan sistem dan data?",
+                    "answer": "cybersecurity",
+                    "xp": 200
+                }
+            ]
+        },
+
+        "network_security": {
+            "title": "Network Security",
+            "description": "Pelajari konsep keamanan jaringan dan cara melindungi sistem.",
+
+            "material": {
+                "title": "Network Security",
+                "content": "Network security melindungi jaringan dan perangkat dari akses atau gangguan yang tidak diizinkan.",
+
+                "topics": [
+                    {
+                        "title": "Firewall",
+                        "content": "Firewall membantu mengontrol lalu lintas jaringan."
+                    },
+                    {
+                        "title": "Authentication",
+                        "content": "Authentication digunakan untuk memverifikasi identitas pengguna."
+                    },
+                    {
+                        "title": "Access Control",
+                        "content": "Access control menentukan siapa yang boleh mengakses resource."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "FIREWALL RECRUIT",
+                    "description": "Apa sistem yang membantu mengontrol lalu lintas jaringan?",
+                    "answer": "firewall",
+                    "xp": 100
+                },
+                {
+                    "title": "AUTH DETECTIVE",
+                    "description": "Apa proses untuk memverifikasi identitas pengguna?",
+                    "answer": "authentication",
+                    "xp": 150
+                },
+                {
+                    "title": "ACCESS MASTER",
+                    "description": "Apa yang menentukan siapa yang boleh mengakses resource?",
+                    "answer": "access control",
+                    "xp": 150
+                },
+                {
+                    "title": "NETWORK DEFENDER",
+                    "description": "Apa bidang yang melindungi jaringan dari akses tidak sah?",
+                    "answer": "network security",
+                    "xp": 200
+                }
+            ]
+        },
+
+        "cryptography": {
+            "title": "Cryptography Basics",
+            "description": "Pelajari konsep encryption, hashing, dan keamanan komunikasi.",
+
+            "material": {
+                "title": "Cryptography",
+                "content": "Cryptography digunakan untuk melindungi informasi melalui teknik matematika dan algoritma.",
+
+                "topics": [
+                    {
+                        "title": "Encryption",
+                        "content": "Encryption mengubah data menjadi bentuk yang sulit dibaca tanpa kunci."
+                    },
+                    {
+                        "title": "Hashing",
+                        "content": "Hashing mengubah data menjadi nilai hash."
+                    },
+                    {
+                        "title": "Key",
+                        "content": "Key digunakan dalam berbagai proses kriptografi untuk melindungi data."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "CRYPTO RECRUIT",
+                    "description": "Apa proses mengubah data menjadi bentuk yang sulit dibaca?",
+                    "answer": "encryption",
+                    "xp": 100
+                },
+                {
+                    "title": "HASH DETECTIVE",
+                    "description": "Apa teknik yang mengubah data menjadi nilai hash?",
+                    "answer": "hashing",
+                    "xp": 150
+                },
+                {
+                    "title": "KEY MASTER",
+                    "description": "Apa yang digunakan dalam proses kriptografi untuk melindungi data?",
+                    "answer": "key",
+                    "xp": 150
+                },
+                {
+                    "title": "CRYPTO BUILDER",
+                    "description": "Apa bidang yang mempelajari perlindungan informasi menggunakan teknik matematika?",
+                    "answer": "cryptography",
+                    "xp": 200
+                }
+            ]
+        },
+
+        "threats": {
+            "title": "Threat Awareness",
+            "description": "Kenali berbagai jenis ancaman digital dan cara mitigasinya.",
+
+            "material": {
+                "title": "Digital Threats",
+                "content": "Ancaman digital dapat mengganggu keamanan data, perangkat, dan jaringan.",
+
+                "topics": [
+                    {
+                        "title": "Malware",
+                        "content": "Malware adalah software berbahaya yang dibuat untuk mengganggu atau merusak sistem."
+                    },
+                    {
+                        "title": "Phishing",
+                        "content": "Phishing adalah upaya menipu pengguna untuk mendapatkan informasi sensitif."
+                    },
+                    {
+                        "title": "Mitigation",
+                        "content": "Mitigation adalah langkah untuk mengurangi risiko dari sebuah ancaman."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "THREAT RECRUIT",
+                    "description": "Apa istilah untuk software berbahaya?",
+                    "answer": "malware",
+                    "xp": 100
+                },
+                {
+                    "title": "PHISHING DETECTIVE",
+                    "description": "Apa jenis serangan yang menipu pengguna untuk mendapatkan informasi sensitif?",
+                    "answer": "phishing",
+                    "xp": 150
+                },
+                {
+                    "title": "MITIGATION MASTER",
+                    "description": "Apa istilah untuk langkah mengurangi risiko ancaman?",
+                    "answer": "mitigation",
+                    "xp": 150
+                },
+                {
+                    "title": "THREAT ANALYST",
+                    "description": "Apa istilah umum untuk sesuatu yang dapat membahayakan keamanan sistem?",
+                    "answer": "threat",
+                    "xp": 200
+                }
+            ]
+        },
+
+        "security_practice": {
+            "title": "Security Practice",
+            "description": "Terapkan konsep keamanan dalam simulasi lingkungan yang aman.",
+
+            "material": {
+                "title": "Security Practice",
+                "content": "Security practice membantu menerapkan prinsip keamanan dalam lingkungan pembelajaran yang aman.",
+
+                "topics": [
+                    {
+                        "title": "Password",
+                        "content": "Gunakan password yang kuat dan jangan membagikannya kepada orang lain."
+                    },
+                    {
+                        "title": "Update",
+                        "content": "Update software membantu memperbaiki masalah keamanan."
+                    },
+                    {
+                        "title": "Backup",
+                        "content": "Backup membantu menyediakan salinan data jika data utama mengalami masalah."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "PASSWORD DEFENDER",
+                    "description": "Apa yang harus digunakan untuk melindungi akun?",
+                    "answer": "password",
+                    "xp": 150
+                },
+                {
+                    "title": "UPDATE MASTER",
+                    "description": "Apa yang membantu memperbaiki masalah keamanan pada software?",
+                    "answer": "update",
+                    "xp": 200
+                },
+                {
+                    "title": "BACKUP RECRUIT",
+                    "description": "Apa yang menyediakan salinan data?",
+                    "answer": "backup",
+                    "xp": 200
+                },
+                {
+                    "title": "SECURITY MASTER",
+                    "description": "Apa tujuan utama security practice?",
+                    "answer": "melindungi data",
+                    "xp": 250
+                }
+            ]
+        }
+    },
+
+    "network_engineer": {
+        "networking_basics": {
+            "title": "Networking Fundamentals",
+            "description": "Pelajari dasar jaringan komputer.",
+
+            "material": {
+                "title": "Apa Itu Computer Networking?",
+                "content": "Computer networking adalah hubungan antara dua atau lebih perangkat agar dapat saling bertukar data dan menggunakan resource bersama.",
+
+                "topics": [
+                    {
+                        "title": "IP Address",
+                        "content": "IP Address adalah alamat yang digunakan untuk mengidentifikasi perangkat dalam sebuah jaringan."
+                    },
+                    {
+                        "title": "Router",
+                        "content": "Router menghubungkan jaringan yang berbeda dan menentukan jalur pengiriman data."
+                    },
+                    {
+                        "title": "Switch",
+                        "content": "Switch menghubungkan perangkat dalam jaringan lokal dan meneruskan data ke perangkat tujuan."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "NETWORK RECRUIT",
+                    "description": "Apa alamat yang digunakan untuk mengidentifikasi perangkat dalam jaringan?",
+                    "answer": "ip address",
+                    "xp": 100
+                },
+                {
+                    "title": "ROUTER DETECTIVE",
+                    "description": "Perangkat apa yang menghubungkan jaringan yang berbeda?",
+                    "answer": "router",
+                    "xp": 150
+                },
+                {
+                    "title": "SWITCH MASTER",
+                    "description": "Perangkat apa yang menghubungkan perangkat dalam jaringan lokal?",
+                    "answer": "switch",
+                    "xp": 150
+                },
+                {
+                    "title": "NETWORK BUILDER",
+                    "description": "Apa bidang yang mempelajari komunikasi antar perangkat jaringan?",
+                    "answer": "networking",
+                    "xp": 200
+                }
+            ]
+        },
+
+        "ip_address": {
+            "title": "IP Addressing",
+            "description": "Pelajari IPv4, IPv6, subnet mask, dan konsep addressing.",
+
+            "material": {
+                "title": "IP Addressing",
+                "content": "IP addressing digunakan untuk memberikan alamat kepada perangkat dalam jaringan.",
+
+                "topics": [
+                    {
+                        "title": "IPv4",
+                        "content": "IPv4 menggunakan alamat 32-bit dan biasanya ditulis dalam empat bagian desimal."
+                    },
+                    {
+                        "title": "IPv6",
+                        "content": "IPv6 menggunakan alamat 128-bit dan dibuat untuk menyediakan ruang alamat yang jauh lebih besar."
+                    },
+                    {
+                        "title": "Subnet Mask",
+                        "content": "Subnet mask digunakan untuk menentukan bagian network dan host dari alamat IPv4."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "IP RECRUIT",
+                    "description": "Berapa bit panjang alamat IPv4?",
+                    "answer": "32",
+                    "xp": 100
+                },
+                {
+                    "title": "IPV6 DETECTIVE",
+                    "description": "Berapa bit panjang alamat IPv6?",
+                    "answer": "128",
+                    "xp": 150
+                },
+                {
+                    "title": "SUBNET MASTER",
+                    "description": "Apa yang digunakan untuk menentukan bagian network dan host IPv4?",
+                    "answer": "subnet mask",
+                    "xp": 150
+                },
+                {
+                    "title": "ADDRESS BUILDER",
+                    "description": "Apa konsep pemberian alamat kepada perangkat dalam jaringan?",
+                    "answer": "ip addressing",
+                    "xp": 200
+                }
+            ]
+        },
+
+        "subnetting": {
+            "title": "Subnetting",
+            "description": "Latih kemampuan membagi jaringan menggunakan subnetting.",
+
+            "material": {
+                "title": "Apa Itu Subnetting?",
+                "content": "Subnetting adalah teknik membagi sebuah jaringan menjadi beberapa jaringan yang lebih kecil.",
+
+                "topics": [
+                    {
+                        "title": "Network",
+                        "content": "Network menunjukkan bagian jaringan dari sebuah alamat IP."
+                    },
+                    {
+                        "title": "Host",
+                        "content": "Host menunjukkan perangkat yang berada dalam sebuah jaringan."
+                    },
+                    {
+                        "title": "CIDR",
+                        "content": "CIDR menggunakan notasi prefix seperti /24 untuk menunjukkan ukuran network."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "SUBNET RECRUIT",
+                    "description": "Apa teknik membagi jaringan menjadi jaringan yang lebih kecil?",
+                    "answer": "subnetting",
+                    "xp": 100
+                },
+                {
+                    "title": "NETWORK DETECTIVE",
+                    "description": "Bagian apa dari IP address yang menunjukkan jaringan?",
+                    "answer": "network",
+                    "xp": 150
+                },
+                {
+                    "title": "HOST MASTER",
+                    "description": "Bagian apa yang menunjukkan perangkat dalam jaringan?",
+                    "answer": "host",
+                    "xp": 150
+                },
+                {
+                    "title": "CIDR BUILDER",
+                    "description": "Apa notasi yang menggunakan prefix seperti /24?",
+                    "answer": "cidr",
+                    "xp": 200
+                }
+            ]
+        },
+
+        "routing": {
+            "title": "Routing Fundamentals",
+            "description": "Pelajari bagaimana data diarahkan antar jaringan.",
+
+            "material": {
+                "title": "Apa Itu Routing?",
+                "content": "Routing adalah proses menentukan jalur yang digunakan data untuk berpindah dari satu jaringan ke jaringan lain.",
+
+                "topics": [
+                    {
+                        "title": "Route",
+                        "content": "Route adalah jalur yang digunakan untuk mengirim data."
+                    },
+                    {
+                        "title": "Router",
+                        "content": "Router menentukan jalur pengiriman paket antar jaringan."
+                    },
+                    {
+                        "title": "Routing Table",
+                        "content": "Routing table berisi informasi tentang jalur yang dapat digunakan router."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "ROUTING RECRUIT",
+                    "description": "Apa proses menentukan jalur data antar jaringan?",
+                    "answer": "routing",
+                    "xp": 100
+                },
+                {
+                    "title": "ROUTE DETECTIVE",
+                    "description": "Apa istilah untuk jalur yang digunakan mengirim data?",
+                    "answer": "route",
+                    "xp": 150
+                },
+                {
+                    "title": "ROUTER MASTER",
+                    "description": "Perangkat apa yang menentukan jalur pengiriman paket?",
+                    "answer": "router",
+                    "xp": 150
+                },
+                {
+                    "title": "TABLE BUILDER",
+                    "description": "Apa yang berisi informasi jalur yang dapat digunakan router?",
+                    "answer": "routing table",
+                    "xp": 200
+                }
+            ]
+        },
+
+        "network_configuration": {
+            "title": "Network Configuration",
+            "description": "Terapkan konfigurasi jaringan dalam simulasi yang aman.",
+
+            "material": {
+                "title": "Network Configuration",
+                "content": "Network configuration adalah proses mengatur perangkat dan parameter jaringan agar dapat berkomunikasi.",
+
+                "topics": [
+                    {
+                        "title": "IP Configuration",
+                        "content": "IP configuration memberikan alamat IP kepada perangkat."
+                    },
+                    {
+                        "title": "Gateway",
+                        "content": "Gateway digunakan sebagai jalur menuju jaringan lain."
+                    },
+                    {
+                        "title": "DNS",
+                        "content": "DNS menerjemahkan nama domain menjadi alamat IP."
+                    }
+                ]
+            },
+
+            "quests": [
+                {
+                    "title": "CONFIG RECRUIT",
+                    "description": "Apa proses mengatur parameter jaringan pada perangkat?",
+                    "answer": "network configuration",
+                    "xp": 150
+                },
+                {
+                    "title": "GATEWAY DETECTIVE",
+                    "description": "Apa yang digunakan sebagai jalur menuju jaringan lain?",
+                    "answer": "gateway",
+                    "xp": 200
+                },
+                {
+                    "title": "DNS MASTER",
+                    "description": "Apa yang menerjemahkan nama domain menjadi alamat IP?",
+                    "answer": "dns",
+                    "xp": 200
+                },
+                {
+                    "title": "NETWORK BUILDER",
+                    "description": "Apa tujuan utama konfigurasi jaringan?",
+                    "answer": "berkomunikasi",
+                    "xp": 250
+                }
+            ]
+        }
+    }
+}

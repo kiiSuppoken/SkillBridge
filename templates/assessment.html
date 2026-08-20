@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Assessment - SkillBridge</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/assessment.css') }}">
+
+    <style>
+        /* =====================================================
+           SKILLBRIDGE NAVBAR
+        ====================================================== */
+
+        .skillbridge-navbar {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 40px;
+
+            background: rgba(0, 0, 0, 0.94);
+
+            border-bottom: 2px solid #ffffff;
+
+            z-index: 9999;
+
+            backdrop-filter: blur(8px);
+        }
+
+
+        .navbar-logo {
+            font-family: 'Anton', Impact, sans-serif;
+
+            font-size: 26px;
+
+            font-style: italic;
+
+            letter-spacing: 1px;
+
+            transform: skew(-8deg);
+
+            color: #ffffff;
+        }
+
+
+        .navbar-logo span {
+            color: #d90000;
+
+            margin-left: 4px;
+        }
+
+
+        .navbar-links {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+
+        .navbar-link {
+            position: relative;
+
+            padding: 10px 14px;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            letter-spacing: 1.5px;
+
+            transition:
+                color 0.2s ease,
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+
+        .navbar-link::after {
+            content: "";
+
+            position: absolute;
+
+            left: 12px;
+            right: 12px;
+
+            bottom: 4px;
+
+            height: 3px;
+
+            background: #d90000;
+
+            transform: scaleX(0);
+
+            transform-origin: left;
+
+            transition:
+                transform 0.2s ease;
+        }
+
+
+        .navbar-link:hover {
+            background: #d90000;
+
+            transform: skew(-8deg);
+        }
+
+
+        .navbar-link:hover::after,
+        .navbar-link.active::after {
+            transform: scaleX(1);
+        }
+
+
+        /* =====================================================
+           ASSESSMENT OFFSET
+        ====================================================== */
+
+        .assessment-page {
+            padding-top: 70px;
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 650px) {
+
+            .skillbridge-navbar {
+                height: 60px;
+
+                padding: 0 15px;
+            }
+
+
+            .navbar-logo {
+                font-size: 20px;
+            }
+
+
+            .navbar-links {
+                gap: 2px;
+            }
+
+
+            .navbar-link {
+                padding: 8px 7px;
+
+                font-size: 8px;
+
+                letter-spacing: 0.8px;
+            }
+
+
+            .navbar-link::after {
+                left: 7px;
+                right: 7px;
+            }
+
+
+            .assessment-page {
+                padding-top: 60px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <nav class="skillbridge-navbar">
+
+        <div class="navbar-logo">
+
+            SKILL<span>BRIDGE</span>
+
+        </div>
+
+
+        <div class="navbar-links">
+
+            <a
+                href="{{ url_for('home') }}"
+                class="navbar-link">
+
+                HOME
+
+            </a>
+
+
+            <a
+                href="{{ url_for('assessment') }}"
+                class="navbar-link active">
+
+                ASSESSMENT
+
+            </a>
+
+
+            {% if session.get('career') %}
+
+                <a
+                    href="{{ url_for(
+                        'learning',
+                        career=session.get('career')
+                    ) }}"
+                    class="navbar-link">
+
+                    ROADMAP
+
+                </a>
+
+
+                <a
+                    href="{{ url_for('progress') }}"
+                    class="navbar-link">
+
+                    PROGRESS
+
+                </a>
+
+            {% endif %}
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         ASSESSMENT PAGE
+    ====================================================== -->
+
+    <main class="assessment-page">
+
+
+        <!-- Background decoration -->
+
+        <div class="red-slash"></div>
+
+        <div class="black-shape"></div>
+
+
+        <section class="assessment-container">
+
+
+            <!-- =================================================
+                 HEADER
+            ================================================== -->
+
+            <header class="assessment-header">
+
+                <div class="top-label">
+
+                    SKILLBRIDGE // ASSESSMENT
+
+                </div>
+
+
+                <h1>
+
+                    DISCOVER<br>
+
+                    YOUR <span>SKILLS.</span>
+
+                </h1>
+
+
+                <p>
+
+                    Jawab beberapa pertanyaan berikut dengan jujur.
+                    Hasilnya akan digunakan untuk menentukan jalur karier
+                    yang paling sesuai dengan kemampuanmu.
+
+                </p>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 FORM
+            ================================================== -->
+
+            <form
+                action="{{ url_for('assessment') }}"
+                method="POST"
+                class="assessment-form">
+
+
+                <!-- USERNAME -->
+
+                <div class="form-section">
+
+                    <div class="section-number">
+
+                        01
+
+                    </div>
+
+
+                    <div class="section-content">
+
+                        <label for="username">
+
+                            WHAT SHOULD WE CALL YOU?
+
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Enter your name..."
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CAREER -->
+
+                <div class="form-section">
+
+                    <div class="section-number">
+
+                        02
+
+                    </div>
+
+
+                    <div class="section-content">
+
+                        <label for="career">
+
+                            WHICH CAREER INTERESTS YOU?
+
+                        </label>
+
+
+                        <select
+                            id="career"
+                            name="career"
+                            required>
+
+                            <option
+                                value=""
+                                disabled
+                                selected>
+
+                                Select your career path
+
+                            </option>
+
+
+                            <option value="software_engineer">
+
+                                Software Engineer
+
+                            </option>
+
+
+                            <option value="uiux">
+
+                                UI/UX Designer
+
+                            </option>
+
+
+                            <option value="data_analyst">
+
+                                Data Analyst
+
+                            </option>
+
+
+                            <option value="cybersecurity">
+
+                                Cybersecurity
+
+                            </option>
+
+
+                            <option value="network_engineer">
+
+                                Network Engineer
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SKILLS
+                ================================================== -->
+
+                <div class="form-section skills-section">
+
+                    <div class="section-number">
+
+                        03
+
+                    </div>
+
+
+                    <div class="section-content">
+
+                        <label>
+
+                            RATE YOUR CURRENT SKILLS
+
+                        </label>
+
+
+                        <p class="section-description">
+
+                            Geser slider sesuai dengan kemampuanmu saat ini.
+
+                        </p>
+
+
+
+                        <!-- PROGRAMMING -->
+
+                        <div class="skill-item">
+
+                            <div class="skill-header">
+
+                                <span>
+
+                                    Programming
+
+                                </span>
+
+
+                                <span id="programming-value">
+
+                                    50%
+
+                                </span>
+
+                            </div>
+
+
+                            <input
+                                type="range"
+                                name="programming"
+                                id="programming"
+                                min="0"
+                                max="100"
+                                value="50">
+
+                        </div>
+
+
+
+                        <!-- PROBLEM SOLVING -->
+
+                        <div class="skill-item">
+
+                            <div class="skill-header">
+
+                                <span>
+
+                                    Problem Solving
+
+                                </span>
+
+
+                                <span id="problem-solving-value">
+
+                                    50%
+
+                                </span>
+
+                            </div>
+
+
+                            <input
+                                type="range"
+                                name="problem_solving"
+                                id="problem-solving"
+                                min="0"
+                                max="100"
+                                value="50">
+
+                        </div>
+
+
+
+                        <!-- COMMUNICATION -->
+
+                        <div class="skill-item">
+
+                            <div class="skill-header">
+
+                                <span>
+
+                                    Communication
+
+                                </span>
+
+
+                                <span id="communication-value">
+
+                                    50%
+
+                                </span>
+
+                            </div>
+
+
+                            <input
+                                type="range"
+                                name="communication"
+                                id="communication"
+                                min="0"
+                                max="100"
+                                value="50">
+
+                        </div>
+
+
+
+                        <!-- DESIGN -->
+
+                        <div class="skill-item">
+
+                            <div class="skill-header">
+
+                                <span>
+
+                                    Creativity & Design
+
+                                </span>
+
+
+                                <span id="design-value">
+
+                                    50%
+
+                                </span>
+
+                            </div>
+
+
+                            <input
+                                type="range"
+                                name="design"
+                                id="design"
+                                min="0"
+                                max="100"
+                                value="50">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SUBMIT
+                ================================================== -->
+
+                <div class="submit-area">
+
+                    <div class="submit-warning">
+
+                        READY TO DISCOVER YOUR PATH?
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="submit-button">
+
+                        ANALYZE MY SKILLS
+
+                        <span>→</span>
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script
+        src="{{ url_for('static', filename='js/assessment.js') }}">
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>SkillBridge</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <nav class="skillbridge-navbar">
+
+        <div class="navbar-logo">
+
+            SKILL<span>BRIDGE</span>
+
+        </div>
+
+
+        <div class="navbar-links">
+
+            <a
+                href="{{ url_for('home') }}"
+                class="navbar-link active">
+
+                HOME
+
+            </a>
+
+
+            <a
+                href="{{ url_for('assessment') }}"
+                class="navbar-link">
+
+                ASSESSMENT
+
+            </a>
+
+
+            {% if session.get('career') %}
+
+                <a
+                    href="{{ url_for(
+                        'learning',
+                        career=session.get('career')
+                    ) }}"
+                    class="navbar-link">
+
+                    ROADMAP
+
+                </a>
+
+
+                <a
+                    href="{{ url_for('progress') }}"
+                    class="navbar-link">
+
+                    PROGRESS
+
+                </a>
+
+            {% endif %}
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <main class="hero">
+
+
+        <div class="hero-content">
+
+
+            <p class="eyebrow">
+
+                WELCOME TO SKILLBRIDGE
+
+            </p>
+
+
+            <h1>
+
+                BUILD<br>
+
+                YOUR<br>
+
+                <span>FUTURE.</span>
+
+            </h1>
+
+
+            <p class="description">
+
+                Temukan kemampuanmu, tentukan jalur kariermu,
+                dan tingkatkan skill melalui perjalanan belajar
+                yang sesuai.
+
+            </p>
+
+
+            <a
+                href="{{ url_for('assessment') }}"
+                class="start-button">
+
+                START YOUR JOURNEY
+
+                <span>→</span>
+
+            </a>
+
+
+        </div>
+
+
+        <!-- =================================================
+             DECORATION
+        ================================================== -->
+
+        <div class="hero-decoration">
+
+            <div class="shape shape-one"></div>
+
+            <div class="shape shape-two"></div>
+
+            <div class="shape shape-three"></div>
+
+        </div>
+
+
+    </main>
+
+
+</body>
+
+</html>

@@ -1,0 +1,929 @@
+/* =========================================================
+   SKILLBRIDGE - RESULT PAGE
+   Persona 5 Royal-inspired
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+
+    background: #070707;
+    color: #ffffff;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.result-page {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 70px 20px 90px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            120deg,
+            #050505 0%,
+            #120000 55%,
+            #050505 100%
+        );
+}
+
+
+/* =========================================================
+   DIAGONAL RED PANEL
+   ========================================================= */
+
+.result-page::before {
+    content: "";
+
+    position: absolute;
+
+    width: 65vw;
+    height: 150vh;
+
+    top: -25vh;
+    right: -35vw;
+
+    background: #d90000;
+
+    transform: rotate(-14deg);
+
+    opacity: 0.88;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   WHITE SLASH
+   ========================================================= */
+
+.result-page::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100vw;
+    height: 12px;
+
+    left: -10vw;
+    bottom: 18%;
+
+    background: #ffffff;
+
+    transform:
+        rotate(-16deg)
+        skewX(-20deg);
+
+    opacity: 0.14;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.result-container {
+    position: relative;
+
+    width: min(900px, 94%);
+
+    margin: 0 auto;
+
+    z-index: 5;
+
+    animation: resultEnter 0.85s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.result-label {
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    margin-bottom: 24px;
+
+    background: #000000;
+
+    border-left: 5px solid #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    transform: skew(-10deg);
+
+    box-shadow:
+        6px 6px 0 #d90000;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.result-container h1 {
+    font-family: 'Anton', Impact, sans-serif;
+
+    font-size: clamp(65px, 9vw, 115px);
+
+    line-height: 0.82;
+
+    font-style: italic;
+
+    letter-spacing: -2px;
+
+    text-shadow:
+        7px 7px 0 #000000;
+
+    transform: skew(-5deg);
+}
+
+
+.result-container h1 span {
+    display: inline-block;
+
+    color: #d90000;
+
+    -webkit-text-stroke: 2px #ffffff;
+
+    text-shadow:
+        7px 7px 0 #000000;
+
+    transform: translateX(15px);
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.result-intro {
+    max-width: 620px;
+
+    margin-top: 28px;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    text-shadow:
+        2px 2px 0 #000000;
+}
+
+
+/* =========================================================
+   ANALYSIS CARD
+   ========================================================= */
+
+.analysis-card {
+    position: relative;
+
+    margin-top: 45px;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 0, 0, 0.96),
+            rgba(30, 30, 30, 0.88)
+        );
+
+    border: 2px solid #ffffff;
+
+    transform: skew(-2deg);
+
+    box-shadow:
+        10px 10px 0 #d90000;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.analysis-card:hover {
+    transform:
+        skew(-2deg)
+        translate(-4px, -4px);
+
+    box-shadow:
+        14px 14px 0 #ffffff;
+}
+
+
+/* =========================================================
+   ANALYSIS TITLE
+   ========================================================= */
+
+.analysis-title {
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* =========================================================
+   SCORE
+   ========================================================= */
+
+.average-score {
+    margin-top: 8px;
+
+    font-family: 'Anton', Impact, sans-serif;
+
+    font-size: clamp(70px, 10vw, 120px);
+
+    line-height: 1;
+
+    font-style: italic;
+
+    color: #d90000;
+
+    -webkit-text-stroke: 2px #ffffff;
+
+    text-shadow:
+        7px 7px 0 #000000;
+}
+
+
+/* =========================================================
+   SCORE INFO
+   ========================================================= */
+
+.score-info {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+    margin-top: 25px;
+}
+
+
+.score-info div {
+    padding: 18px;
+
+    background: #111111;
+
+    border-left: 4px solid #d90000;
+}
+
+
+.score-info small {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+
+.score-info strong {
+    display: block;
+
+    font-size: 15px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CAREER CARD
+   ========================================================= */
+
+.career-card {
+    position: relative;
+
+    margin-top: 35px;
+
+    padding: 35px;
+
+    background: #d90000;
+
+    border: 3px solid #ffffff;
+
+    transform:
+        skew(-3deg)
+        rotate(-1deg);
+
+    box-shadow:
+        12px 12px 0 #000000;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.career-card:hover {
+    transform:
+        skew(-3deg)
+        rotate(-1deg)
+        translate(-4px, -4px);
+
+    box-shadow:
+        16px 16px 0 #ffffff;
+}
+
+
+/* =========================================================
+   CAREER LABEL
+   ========================================================= */
+
+.career-label {
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   CAREER TITLE
+   ========================================================= */
+
+.career-card h2 {
+    font-family: 'Anton', Impact, sans-serif;
+
+    font-size: clamp(45px, 7vw, 85px);
+
+    line-height: 0.9;
+
+    font-style: italic;
+
+    letter-spacing: -1px;
+
+    text-shadow:
+        5px 5px 0 #000000;
+}
+
+
+/* =========================================================
+   CAREER DESCRIPTION
+   ========================================================= */
+
+.career-card p {
+    max-width: 600px;
+
+    margin-top: 20px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   ACTION
+   ========================================================= */
+
+.result-action {
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: 45px;
+}
+
+
+.continue-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 17px 25px;
+
+    color: #ffffff;
+
+    background: #000000;
+
+    border: 3px solid #ffffff;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    transform: skew(-10deg);
+
+    box-shadow:
+        8px 8px 0 #d90000;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.continue-button span {
+    font-size: 21px;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.continue-button:hover {
+    background: #d90000;
+
+    transform:
+        skew(-10deg)
+        translate(-3px, -3px);
+
+    box-shadow:
+        12px 12px 0 #ffffff;
+}
+
+
+.continue-button:hover span {
+    transform: translateX(7px);
+}
+
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes resultEnter {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(45px)
+            rotate(1deg);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            rotate(0);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .result-page {
+        padding-top: 50px;
+    }
+
+    .score-info {
+        grid-template-columns: 1fr;
+    }
+
+    .result-action {
+        justify-content: flex-start;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    .result-page {
+        padding:
+            35px 12px 65px;
+    }
+
+    .result-container {
+        width: 94%;
+    }
+
+    .result-label {
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+    .result-container h1 {
+        font-size: 63px;
+    }
+
+    .result-container h1 span {
+        transform: translateX(8px);
+    }
+
+    .result-intro {
+        font-size: 12px;
+    }
+
+    .analysis-card {
+        padding: 22px;
+
+        box-shadow:
+            7px 7px 0 #d90000;
+    }
+
+    .average-score {
+        font-size: 75px;
+    }
+
+    .career-card {
+        padding: 25px;
+
+        box-shadow:
+            8px 8px 0 #000000;
+    }
+
+    .career-card h2 {
+        font-size: 45px;
+    }
+
+    .career-card p {
+        font-size: 11px;
+    }
+
+    .continue-button {
+        width: 100%;
+
+        justify-content: center;
+
+        font-size: 9px;
+    }
+}
+
+/* =========================================================
+   SKILL STATUS
+   ========================================================= */
+
+.skill-status {
+    margin-top: 22px;
+
+    padding: 18px 20px;
+
+    background: #080808;
+
+    border: 2px solid rgba(255, 255, 255, 0.25);
+
+    transform: skew(-2deg);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.skill-status:hover {
+    transform: translateX(-4px) skew(-2deg);
+
+    border-color: #ffffff;
+
+    box-shadow:
+        6px 6px 0 #000000;
+}
+
+
+.skill-status-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+
+.skill-status-top span {
+    font-size: 12px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+.skill-status-top strong {
+    font-family: 'Anton', Impact, sans-serif;
+
+    font-size: 25px;
+
+    font-style: italic;
+
+    color: #ffffff;
+}
+
+
+.skill-bar {
+    width: 100%;
+
+    height: 8px;
+
+    margin-top: 13px;
+
+    background: #252525;
+
+    overflow: hidden;
+
+    transform: skew(-8deg);
+}
+
+
+.skill-bar-fill {
+    height: 100%;
+
+    background: #ffffff;
+
+    box-shadow:
+        4px 0 0 #d90000;
+
+    transition:
+        width 0.8s cubic-bezier(.16, 1, .3, 1);
+}
+
+
+.skill-status small {
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    color: #d90000;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   AI SKILL RECOMMENDATION
+   ========================================================= */
+
+.recommendation {
+    position: relative;
+
+    margin-top: 18px;
+
+    padding: 22px 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #090909 0%,
+            #151515 100%
+        );
+
+    border: 2px solid #ffffff;
+
+    overflow: hidden;
+
+    transform: skew(-2deg);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.recommendation::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 6px;
+    height: 100%;
+
+    background: #d90000;
+}
+
+
+.recommendation::after {
+    content: "AI";
+
+    position: absolute;
+
+    right: -5px;
+    bottom: -25px;
+
+    font-family: 'Anton', Impact, sans-serif;
+
+    font-size: 90px;
+
+    font-style: italic;
+
+    color: rgba(217, 0, 0, 0.08);
+
+    pointer-events: none;
+}
+
+
+.recommendation:hover {
+    transform:
+        translate(-5px, -5px)
+        skew(-2deg);
+
+    box-shadow:
+        8px 8px 0 #d90000;
+}
+
+
+/* =========================================================
+   RECOMMENDATION TITLE
+   ========================================================= */
+
+.recommendation h3 {
+    position: relative;
+
+    z-index: 2;
+
+    font-family: 'Anton', Impact, sans-serif;
+
+    font-size: 32px;
+
+    line-height: 1;
+
+    font-style: italic;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    text-shadow:
+        3px 3px 0 #000000;
+}
+
+
+/* =========================================================
+   PRIORITY
+   ========================================================= */
+
+.recommendation strong {
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-block;
+
+    margin-top: 12px;
+
+    padding: 6px 10px;
+
+    background: #d90000;
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    transform: skew(-8deg);
+
+    box-shadow:
+        3px 3px 0 #000000;
+}
+
+
+/* =========================================================
+   RECOMMENDATION MESSAGE
+   ========================================================= */
+
+.recommendation p {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 650px;
+
+    margin-top: 17px;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.78);
+}
+
+
+/* =========================================================
+   RECOMMENDATION NUMBER
+   ========================================================= */
+
+.recommendation:nth-child(2)::before {
+    background: #ffffff;
+}
+
+.recommendation:nth-child(3)::before {
+    background: #d90000;
+}
+
+.recommendation:nth-child(4)::before {
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    .skill-status {
+        padding: 16px;
+    }
+
+    .skill-status-top span {
+        font-size: 10px;
+    }
+
+    .skill-status-top strong {
+        font-size: 21px;
+    }
+
+    .recommendation {
+        padding: 20px;
+    }
+
+    .recommendation h3 {
+        font-size: 27px;
+    }
+
+    .recommendation p {
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,191 @@
+{
+    "software_engineer": [
+        {
+            "id": "programming",
+            "title": "Programming Fundamentals",
+            "description": "Pelajari dasar pemrograman, variable, data type, dan cara berpikir seperti programmer.",
+            "quest_count": 4,
+            "xp": 500
+        },
+        {
+            "id": "algorithm",
+            "title": "Algorithms & Problem Solving",
+            "description": "Latih kemampuan memecahkan masalah menggunakan algoritma.",
+            "quest_count": 4,
+            "xp": 600
+        },
+        {
+            "id": "oop",
+            "title": "Object-Oriented Programming",
+            "description": "Pelajari konsep class, object, inheritance, dan encapsulation.",
+            "quest_count": 4,
+            "xp": 700
+        },
+        {
+            "id": "database",
+            "title": "Database Fundamentals",
+            "description": "Pelajari database, SQL, tabel, query, dan relasi data.",
+            "quest_count": 4,
+            "xp": 700
+        },
+        {
+            "id": "project",
+            "title": "Build Your First Project",
+            "description": "Gabungkan skill yang telah dipelajari ke dalam sebuah project.",
+            "quest_count": 5,
+            "xp": 1000
+        }
+    ],
+
+    "uiux": [
+        {
+            "id": "design_basics",
+            "title": "Design Fundamentals",
+            "description": "Pelajari prinsip dasar desain dan bagaimana membuat desain yang efektif.",
+            "quest_count": 4,
+            "xp": 500
+        },
+        {
+            "id": "color",
+            "title": "Color Theory",
+            "description": "Pelajari warna, kombinasi warna, contrast, dan visual hierarchy.",
+            "quest_count": 4,
+            "xp": 550
+        },
+        {
+            "id": "typography",
+            "title": "Typography",
+            "description": "Pelajari penggunaan font, hierarchy, spacing, dan readability.",
+            "quest_count": 4,
+            "xp": 550
+        },
+        {
+            "id": "wireframe",
+            "title": "Wireframing",
+            "description": "Pelajari cara membuat struktur dan layout sebuah interface.",
+            "quest_count": 4,
+            "xp": 650
+        },
+        {
+            "id": "prototype",
+            "title": "Interactive Prototype",
+            "description": "Buat prototype interaktif dari desain yang telah dibuat.",
+            "quest_count": 5,
+            "xp": 1000
+        }
+    ],
+
+    "data_analyst": [
+        {
+            "id": "spreadsheet",
+            "title": "Spreadsheet Fundamentals",
+            "description": "Pelajari cara mengelola, membersihkan, dan membaca data menggunakan spreadsheet.",
+            "quest_count": 4,
+            "xp": 500
+        },
+        {
+            "id": "python_data",
+            "title": "Python for Data",
+            "description": "Gunakan Python untuk mengolah dan memahami data.",
+            "quest_count": 4,
+            "xp": 600
+        },
+        {
+            "id": "pandas",
+            "title": "Data Manipulation",
+            "description": "Pelajari konsep pengolahan data menggunakan Pandas.",
+            "quest_count": 4,
+            "xp": 650
+        },
+        {
+            "id": "visualization",
+            "title": "Data Visualization",
+            "description": "Pelajari cara mengubah data menjadi visualisasi yang mudah dipahami.",
+            "quest_count": 4,
+            "xp": 650
+        },
+        {
+            "id": "data_analysis",
+            "title": "Real Data Analysis",
+            "description": "Gunakan semua skill untuk melakukan analisis terhadap dataset.",
+            "quest_count": 5,
+            "xp": 1000
+        }
+    ],
+
+    "cybersecurity": [
+        {
+            "id": "security_basics",
+            "title": "Security Fundamentals",
+            "description": "Pelajari konsep dasar keamanan informasi dan perlindungan data.",
+            "quest_count": 4,
+            "xp": 500
+        },
+        {
+            "id": "network_security",
+            "title": "Network Security",
+            "description": "Pelajari konsep keamanan jaringan dan cara melindungi sistem.",
+            "quest_count": 4,
+            "xp": 650
+        },
+        {
+            "id": "cryptography",
+            "title": "Cryptography Basics",
+            "description": "Pelajari konsep encryption, hashing, dan keamanan komunikasi.",
+            "quest_count": 4,
+            "xp": 650
+        },
+        {
+            "id": "threats",
+            "title": "Threat Awareness",
+            "description": "Kenali berbagai jenis ancaman digital dan cara mitigasinya.",
+            "quest_count": 4,
+            "xp": 700
+        },
+        {
+            "id": "security_practice",
+            "title": "Security Practice",
+            "description": "Terapkan konsep keamanan dalam simulasi lingkungan yang aman.",
+            "quest_count": 5,
+            "xp": 1000
+        }
+    ],
+
+    "network_engineer": [
+        {
+            "id": "networking_basics",
+            "title": "Networking Fundamentals",
+            "description": "Pelajari konsep dasar jaringan komputer dan bagaimana perangkat berkomunikasi.",
+            "quest_count": 4,
+            "xp": 500
+        },
+        {
+            "id": "ip_address",
+            "title": "IP Addressing",
+            "description": "Pelajari IPv4, IPv6, subnet mask, dan konsep addressing.",
+            "quest_count": 4,
+            "xp": 600
+        },
+        {
+            "id": "subnetting",
+            "title": "Subnetting",
+            "description": "Latih kemampuan membagi jaringan menggunakan subnetting.",
+            "quest_count": 4,
+            "xp": 650
+        },
+        {
+            "id": "routing",
+            "title": "Routing Fundamentals",
+            "description": "Pelajari bagaimana data diarahkan antar jaringan.",
+            "quest_count": 4,
+            "xp": 700
+        },
+        {
+            "id": "network_configuration",
+            "title": "Network Configuration",
+            "description": "Terapkan konfigurasi jaringan dalam simulasi yang aman.",
+            "quest_count": 5,
+            "xp": 1000
+        }
+    ]
+}

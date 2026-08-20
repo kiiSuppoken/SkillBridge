@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Roadmap - SkillBridge</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     SKILLBRIDGE NAVBAR
+====================================================== -->
+
+<nav class="skillbridge-navbar">
+
+    <div class="navbar-logo">
+
+        SKILL<span>BRIDGE</span>
+
+    </div>
+
+
+    <div class="navbar-links">
+
+        <a
+            href="{{ url_for('home') }}"
+            class="navbar-link">
+
+            HOME
+
+        </a>
+
+
+        <a
+            href="{{ url_for('assessment') }}"
+            class="navbar-link">
+
+            ASSESSMENT
+
+        </a>
+
+
+        <a
+            href="{{ url_for(
+                'learning',
+                career=session.get('career')
+            ) }}"
+            class="navbar-link active">
+
+            ROADMAP
+
+        </a>
+
+
+        <a
+            href="{{ url_for('progress') }}"
+            class="navbar-link">
+
+            PROGRESS
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     ROADMAP
+====================================================== -->
+
+<main class="roadmap-page">
+
+    <div class="roadmap-container">
+
+
+        <!-- =====================================================
+             LABEL
+        ====================================================== -->
+
+        <div class="roadmap-label">
+
+            SKILLBRIDGE // LEARNING SYSTEM
+
+        </div>
+
+
+
+        <!-- =====================================================
+             HEADER
+        ====================================================== -->
+
+        <header class="roadmap-header">
+
+            <div>
+
+                <div class="roadmap-kicker">
+
+                    CAREER ROADMAP
+
+                </div>
+
+
+                <h1>
+
+                    {{ career.replace('_', ' ').upper() }}
+
+                </h1>
+
+
+                <p>
+
+                    Build your skills.
+                    Complete every mission.
+                    Become ready for your career.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- XP -->
+
+            <div class="roadmap-xp">
+
+                <span>
+
+                    CURRENT XP
+
+                </span>
+
+
+                <strong>
+
+                    {{ xp }}
+
+                </strong>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+             TOTAL PROGRESS
+        ====================================================== -->
+
+        <section class="roadmap-progress">
+
+            <div class="progress-top">
+
+                <span>
+
+                    TRAINING PROGRESS
+
+                </span>
+
+
+                <strong>
+
+                    {{ progress }}%
+
+                </strong>
+
+            </div>
+
+
+            <div class="progress-track">
+
+                <div
+                    class="progress-fill"
+                    style="width: {{ progress }}%;">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             LESSONS
+        ====================================================== -->
+
+        <section class="roadmap-lessons">
+
+
+            <div class="section-title">
+
+                AVAILABLE TRAINING
+
+            </div>
+
+
+            {% if lessons %}
+
+
+            <div class="lesson-roadmap">
+
+
+                {% for lesson in lessons %}
+
+
+                <article
+                    class="
+                        roadmap-card
+
+                        {% if lesson.locked %}
+                            locked
+                        {% endif %}
+
+                        {% if lesson.completed %}
+                            completed
+                        {% endif %}
+                    "
+                >
+
+
+                    <!-- NUMBER -->
+
+                    <div class="roadmap-number">
+
+                        {{ "%02d" | format(loop.index) }}
+
+                    </div>
+
+
+
+                    <!-- CONTENT -->
+
+                    <div class="roadmap-content">
+
+
+                        <!-- STATUS -->
+
+                        <div class="roadmap-status">
+
+
+                            {% if lesson.completed %}
+
+                                ✓ TRAINING COMPLETED
+
+                            {% elif lesson.locked %}
+
+                                🔒 TRAINING LOCKED
+
+                            {% else %}
+
+                                TRAINING MODULE
+                                {{ "%02d" | format(loop.index) }}
+
+                            {% endif %}
+
+
+                        </div>
+
+
+
+                        <!-- TITLE -->
+
+                        <h2>
+
+                            {{ lesson.title }}
+
+                        </h2>
+
+
+
+                        <!-- DESCRIPTION -->
+
+                        <p>
+
+                            {{ lesson.description }}
+
+                        </p>
+
+
+
+                        <!-- LESSON PROGRESS -->
+
+                        <div class="lesson-card-progress">
+
+
+                            <div class="lesson-card-progress-top">
+
+                                <span>
+
+                                    QUEST PROGRESS
+
+                                </span>
+
+
+                                <strong>
+
+                                    {{ lesson.completed_count }}
+                                    /
+                                    {{ lesson.quest_count }}
+
+                                </strong>
+
+                            </div>
+
+
+                            <div class="lesson-card-progress-track">
+
+                                <div
+                                    class="lesson-card-progress-fill"
+                                    style="width: {{ lesson.progress }}%;">
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- BOTTOM -->
+
+                        <div class="roadmap-bottom">
+
+
+                            <span>
+
+                                {{ lesson.quest_count }}
+                                QUESTS
+
+                            </span>
+
+
+                            <span>
+
+                                +{{ lesson.xp }}
+                                XP
+
+                            </span>
+
+
+
+                            {% if lesson.locked %}
+
+
+                                <button
+                                    type="button"
+                                    class="roadmap-button locked-button"
+                                    disabled>
+
+                                    🔒 LOCKED
+
+                                </button>
+
+
+                            {% elif lesson.completed %}
+
+
+                                <a
+                                    href="{{ url_for(
+                                        'lesson',
+                                        career=career,
+                                        lesson_id=lesson.id
+                                    ) }}"
+                                    class="roadmap-button completed-button">
+
+                                    ✓ REVIEW
+
+                                    <b>→</b>
+
+                                </a>
+
+
+                            {% else %}
+
+
+                                <a
+                                    href="{{ url_for(
+                                        'lesson',
+                                        career=career,
+                                        lesson_id=lesson.id
+                                    ) }}"
+                                    class="roadmap-button">
+
+                                    ENTER MODULE
+
+                                    <b>→</b>
+
+                                </a>
+
+
+                            {% endif %}
+
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                {% endfor %}
+
+
+            </div>
+
+
+            {% else %}
+
+
+            <div class="empty-roadmap">
+
+                <h2>
+
+                    NO TRAINING DATA
+
+                </h2>
+
+
+                <p>
+
+                    Belum ada materi untuk karier ini.
+
+                </p>
+
+            </div>
+
+
+            {% endif %}
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             NAVIGATION
+        ====================================================== -->
+
+        <div class="roadmap-navigation">
+
+
+            <a
+                href="{{ url_for('home') }}"
+                class="back-button">
+
+                ← HOME
+
+            </a>
+
+
+
+            <!-- PROGRESS -->
+
+            <a
+                href="{{ url_for('progress') }}"
+                class="progress-button">
+
+                VIEW PROGRESS
+
+                <b>→</b>
+
+            </a>
+
+
+
+            <!-- RESET -->
+
+            <a
+                href="{{ url_for('reset_progress') }}"
+                class="reset-button"
+                onclick="
+                    return confirm(
+                        'Reset semua progress dan XP?'
+                    );
+                "
+            >
+
+                RESET PROGRESS
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+
+<!-- =========================================================
+     PROGRESS BUTTON STYLE
+========================================================== -->
+
+<style>
+
+.progress-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 12px 20px;
+
+    background: #000000;
+
+    color: #ffffff;
+
+    border: 2px solid #ffffff;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    transform: skew(-10deg);
+
+    box-shadow:
+        6px 6px 0 #d90000;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+
+}
+
+
+.progress-button b {
+
+    font-size: 16px;
+
+    transition:
+        transform 0.25s ease;
+
+}
+
+
+.progress-button:hover {
+
+    background: #d90000;
+
+    transform:
+        skew(-10deg)
+        translate(-3px, -3px);
+
+    box-shadow:
+        9px 9px 0 #ffffff;
+
+}
+
+
+.progress-button:hover b {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+@media (max-width: 700px) {
+
+    .roadmap-navigation {
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+
+    }
+
+
+    .progress-button,
+    .back-button,
+    .reset-button {
+
+        flex: 1;
+
+        min-width: 140px;
+
+        text-align: center;
+
+    }
+
+}
+
+</style>
+
+
+</body>
+
+</html>

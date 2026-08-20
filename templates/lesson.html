@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>{{ lesson.title }} - SkillBridge</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/lesson.css') }}">
+
+</head>
+
+
+<body>
+
+<main class="lesson-page">
+
+    <div class="lesson-container">
+
+
+        <!-- =====================================================
+             LABEL
+        ====================================================== -->
+
+        <div class="lesson-label">
+
+            SKILLBRIDGE // {{ career.replace('_', ' ').upper() }}
+
+        </div>
+
+
+        <!-- =====================================================
+             HEADER
+        ====================================================== -->
+
+        <header class="lesson-header">
+
+            <div class="lesson-number">
+
+                LESSON
+
+            </div>
+
+
+            <h1>
+
+                {{ lesson.title }}
+
+            </h1>
+
+
+            <p>
+
+                {{ lesson.description }}
+
+            </p>
+
+        </header>
+
+
+        <!-- =====================================================
+             LESSON PROGRESS
+        ====================================================== -->
+
+        {% set total_quests = lesson.quests | length %}
+
+        {% set completed_count = completed | select | list | length %}
+
+
+        {% if total_quests > 0 %}
+
+            {% set lesson_progress =
+                ((completed_count / total_quests) * 100) | int
+            %}
+
+        {% else %}
+
+            {% set lesson_progress = 0 %}
+
+        {% endif %}
+
+
+        <section class="lesson-progress">
+
+            <div class="lesson-progress-top">
+
+                <span>
+
+                    QUEST PROGRESS
+
+                </span>
+
+
+                <strong>
+
+                    {{ completed_count }}/{{ total_quests }}
+
+                </strong>
+
+            </div>
+
+
+            <div class="lesson-progress-track">
+
+                <div
+                    class="lesson-progress-fill"
+                    style="width: {{ lesson_progress }}%;">
+
+                </div>
+
+            </div>
+
+
+            <div class="lesson-progress-bottom">
+
+                <span>
+
+                    TRAINING PROGRESS
+
+                </span>
+
+
+                <strong>
+
+                    {{ lesson_progress }}%
+
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             QUEST FEEDBACK
+        ====================================================== -->
+
+        {% if quest_message %}
+
+        <section class="quest-feedback
+            {% if quest_correct %}
+                correct
+            {% else %}
+                incorrect
+            {% endif %}">
+
+            <div class="feedback-title">
+
+                {% if quest_correct %}
+
+                    ✓ QUEST COMPLETE
+
+                {% else %}
+
+                    ✕ QUEST FAILED
+
+                {% endif %}
+
+            </div>
+
+
+            <div class="feedback-message">
+
+                {{ quest_message }}
+
+            </div>
+
+
+            <p>
+
+                {% if quest_correct %}
+
+                    Excellent work, Recruit.
+
+                {% else %}
+
+                    Review the material and try again.
+
+                {% endif %}
+
+            </p>
+
+        </section>
+
+        {% endif %}
+
+
+        <!-- =====================================================
+             LEARNING MATERIAL
+        ====================================================== -->
+
+        <section class="material-section">
+
+            <div class="material-label">
+
+                LEARNING MATERIAL
+
+            </div>
+
+
+            <h2>
+
+                {{ lesson.material.title }}
+
+            </h2>
+
+
+            <p class="material-intro">
+
+                {{ lesson.material.content }}
+
+            </p>
+
+
+            <div class="material-topics">
+
+                {% for topic in lesson.material.topics %}
+
+                <article class="material-card">
+
+                    <div class="material-number">
+
+                        {{ "%02d" | format(loop.index) }}
+
+                    </div>
+
+
+                    <div class="material-content">
+
+                        <h3>
+
+                            {{ topic.title }}
+
+                        </h3>
+
+
+                        <p>
+
+                            {{ topic.content }}
+
+                        </p>
+
+
+                        {% if topic.code %}
+
+                        <pre><code>{{ topic.code }}</code></pre>
+
+                        {% endif %}
+
+                    </div>
+
+                </article>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             QUEST SECTION
+        ====================================================== -->
+
+        <section class="quest-section">
+
+            <div class="quest-heading">
+
+                <span>
+
+                    AVAILABLE QUESTS
+
+                </span>
+
+
+                <strong>
+
+                    {{ total_quests }} QUESTS
+
+                </strong>
+
+            </div>
+
+
+            <div class="quest-list">
+
+                {% for quest in lesson.quests %}
+
+                <article class="quest-card">
+
+                    <div class="quest-number">
+
+                        {{ "%02d" | format(loop.index) }}
+
+                    </div>
+
+
+                    <div class="quest-content">
+
+                        <div class="quest-label">
+
+                            QUEST {{ "%02d" | format(loop.index) }}
+
+                        </div>
+
+
+                        <h2>
+
+                            {{ quest.title }}
+
+                        </h2>
+
+
+                        <p>
+
+                            {{ quest.description }}
+
+                        </p>
+
+
+                        <div class="quest-bottom">
+
+                            <span>
+
+                                +{{ quest.xp }} XP
+
+                            </span>
+
+
+                            <!-- =================================================
+                                 QUEST SELESAI
+                            ================================================== -->
+
+                            {% if completed[loop.index0] %}
+
+                            <button
+                                type="button"
+                                class="quest-button"
+                                disabled>
+
+                                ✓ COMPLETED
+
+                            </button>
+
+
+                            <!-- =================================================
+                                 QUEST TERBUKA
+                                 QUEST 01 SELALU TERBUKA
+                                 QUEST BERIKUTNYA TERBUKA
+                                 JIKA QUEST SEBELUMNYA SELESAI
+                            ================================================== -->
+
+                            {% elif loop.index0 == 0 or completed[loop.index0 - 1] %}
+
+                            <button
+                                type="button"
+                                class="quest-button"
+                                onclick="startQuest({{ loop.index0 }})">
+
+                                START QUEST
+
+                                <b>→</b>
+
+                            </button>
+
+
+                            <!-- =================================================
+                                 QUEST TERKUNCI
+                            ================================================== -->
+
+                            {% else %}
+
+                            <button
+                                type="button"
+                                class="quest-button"
+                                disabled>
+
+                                🔒 LOCKED
+
+                            </button>
+
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             QUEST PANEL
+        ====================================================== -->
+
+        <section
+            id="quest-panel"
+            class="quest-panel hidden">
+
+            <div class="panel-label">
+
+                CURRENT QUEST
+
+            </div>
+
+
+            <h2 id="quest-title">
+
+                QUEST
+
+            </h2>
+
+
+            <p id="quest-description">
+
+                Pilih sebuah quest untuk memulai.
+
+            </p>
+
+
+            <form
+                method="POST"
+                action="{{ url_for('complete_quest') }}">
+
+
+                <input
+                    type="hidden"
+                    name="career"
+                    value="{{ career }}">
+
+
+                <input
+                    type="hidden"
+                    name="lesson_id"
+                    value="{{ request.args.get('lesson_id') }}">
+
+
+                <input
+                    type="hidden"
+                    name="quest_index"
+                    id="quest-index"
+                    value="0">
+
+
+                <div class="question-box">
+
+                    <div class="question-label">
+
+                        YOUR ANSWER
+
+                    </div>
+
+
+                    <textarea
+                        name="answer"
+                        id="quest-answer"
+                        placeholder="Tulis jawabanmu di sini..."
+                        required></textarea>
+
+                </div>
+
+
+                <div class="panel-actions">
+
+                    <button
+                        type="submit"
+                        class="submit-quest">
+
+                        SUBMIT QUEST
+
+                        <span>→</span>
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- =====================================================
+             XP
+        ====================================================== -->
+
+        <section class="xp-result">
+
+            <div class="xp-title">
+
+                CURRENT XP
+
+            </div>
+
+
+            <div id="xp-earned">
+
+                {{ xp }} XP
+
+            </div>
+
+
+            <p>
+
+                KEEP BUILDING YOUR SKILLS.
+
+            </p>
+
+        </section>
+
+
+        <!-- =====================================================
+             NAVIGATION
+        ====================================================== -->
+
+        <div class="lesson-navigation">
+
+
+            <!-- ROADMAP -->
+
+            <a
+                href="{{ url_for('learning', career=career) }}"
+                class="lesson-nav-button">
+
+                ← ROADMAP
+
+            </a>
+
+
+            <!-- PROGRESS -->
+
+            <a
+                href="{{ url_for('progress') }}"
+                class="lesson-nav-button progress-nav-button">
+
+                PROGRESS
+
+                <b>→</b>
+
+            </a>
+
+
+            <!-- HOME -->
+
+            <a
+                href="{{ url_for('home') }}"
+                class="lesson-nav-button">
+
+                HOME
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+<!-- =========================================================
+     NAVIGATION STYLE
+========================================================== -->
+
+<style>
+
+.lesson-navigation {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 45px;
+
+    padding-bottom: 30px;
+
+}
+
+
+.lesson-nav-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    min-width: 150px;
+
+    padding: 14px 20px;
+
+    background: #000000;
+
+    color: #ffffff;
+
+    border: 2px solid #ffffff;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    transform: skew(-10deg);
+
+    box-shadow: 6px 6px 0 #d90000;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+
+}
+
+
+.lesson-nav-button:hover {
+
+    background: #d90000;
+
+    transform:
+        skew(-10deg)
+        translate(-3px, -3px);
+
+    box-shadow: 9px 9px 0 #ffffff;
+
+}
+
+
+.lesson-nav-button b {
+
+    font-size: 16px;
+
+    transition:
+        transform 0.25s ease;
+
+}
+
+
+.lesson-nav-button:hover b {
+
+    transform: translateX(5px);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+    .lesson-navigation {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 15px;
+
+    }
+
+
+    .lesson-nav-button {
+
+        width: 100%;
+
+    }
+
+}
+
+</style>
+
+
+<!-- =========================================================
+     QUEST JAVASCRIPT
+========================================================== -->
+
+<script>
+
+const quests = {{ lesson.quests | tojson }};
+
+let currentQuest = null;
+
+
+function startQuest(index) {
+
+    currentQuest = index;
+
+    const quest = quests[index];
+
+
+    document
+        .getElementById("quest-panel")
+        .classList.remove("hidden");
+
+
+    document
+        .getElementById("quest-title")
+        .textContent = quest.title;
+
+
+    document
+        .getElementById("quest-description")
+        .textContent = quest.description;
+
+
+    document
+        .getElementById("quest-index")
+        .value = index;
+
+
+    document
+        .getElementById("quest-answer")
+        .value = "";
+
+
+    document
+        .getElementById("quest-panel")
+        .scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "center"
+
+        });
+
+}
+
+</script>
+
+
+</body>
+
+</html>

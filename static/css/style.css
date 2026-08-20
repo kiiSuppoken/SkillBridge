@@ -1,0 +1,1656 @@
+/* =========================================================
+   SKILLBRIDGE - MAIN STYLE
+   Persona 5 Royal-inspired
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+
+    background: #050505;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.88) 0%,
+            rgba(0, 0, 0, 0.68) 40%,
+            rgba(0, 0, 0, 0.35) 100%
+        ),
+        url("../images/background.jpg") center center / cover no-repeat;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   RED OVERLAY
+   ========================================================= */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(210, 0, 0, 0.20),
+            transparent 45%
+        );
+
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   DIAGONAL DESIGN
+   ========================================================= */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 75vw;
+    height: 150%;
+
+    right: -35%;
+    top: -25%;
+
+    background: rgba(180, 0, 0, 0.72);
+
+    transform: rotate(-12deg);
+
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.hero-content {
+    position: relative;
+
+    width: min(650px, 90%);
+
+    margin-left: 8vw;
+
+    z-index: 5;
+
+    animation: contentReveal 0.9s ease-out forwards;
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.eyebrow {
+    display: inline-block;
+
+    margin-bottom: 15px;
+    padding: 7px 14px;
+
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 3px;
+
+    background: #000000;
+
+    transform: skew(-12deg);
+
+    box-shadow: 6px 6px 0 rgba(220, 0, 0, 0.9);
+
+    animation: slideFromLeft 0.7s ease-out 0.1s both;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+   ========================================================= */
+
+h1 {
+    font-family: 'Anton', Impact, sans-serif;
+
+    font-size: clamp(75px, 10vw, 145px);
+
+    line-height: 0.78;
+
+    letter-spacing: -3px;
+
+    text-transform: uppercase;
+
+    font-style: italic;
+
+    text-shadow:
+        7px 7px 0 #000000;
+
+    transform: skew(-5deg);
+
+    animation: titleReveal 0.8s cubic-bezier(.16, 1, .3, 1) 0.2s both;
+}
+
+
+/* =========================================================
+   TITLE RED WORD
+   ========================================================= */
+
+h1 span {
+    display: inline-block;
+
+    color: #e00000;
+
+    -webkit-text-stroke: 2px #ffffff;
+
+    text-shadow:
+        8px 8px 0 #000000;
+
+    transform: translateX(20px) rotate(-2deg);
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+h1 span:hover {
+    transform:
+        translateX(30px)
+        rotate(-3deg)
+        scale(1.04);
+
+    filter: brightness(1.2);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.description {
+    max-width: 520px;
+
+    margin-top: 30px;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    font-weight: 500;
+
+    color: rgba(255, 255, 255, 0.86);
+
+    text-shadow: 2px 2px 0 #000000;
+
+    animation: slideFromLeft 0.8s ease-out 0.45s both;
+}
+
+
+/* =========================================================
+   START BUTTON
+   ========================================================= */
+
+.start-button {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-top: 35px;
+    padding: 17px 25px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    background: #000000;
+
+    border: 3px solid #ffffff;
+
+    transform: skew(-10deg);
+
+    box-shadow:
+        8px 8px 0 #e00000;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+
+    animation: buttonReveal 0.8s ease-out 0.6s both;
+}
+
+
+/* Button text and arrow */
+
+.start-button span {
+    display: inline-block;
+
+    font-size: 22px;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+/* Button shine */
+
+.start-button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 80%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    transform: skewX(-25deg);
+
+    transition: left 0.45s ease;
+}
+
+
+/* Button hover */
+
+.start-button:hover {
+    background: #e00000;
+
+    transform:
+        skew(-10deg)
+        translate(-3px, -3px);
+
+    box-shadow:
+        12px 12px 0 #ffffff;
+}
+
+.start-button:hover::before {
+    left: 130%;
+}
+
+.start-button:hover span {
+    transform: translateX(6px);
+}
+
+
+/* =========================================================
+   DECORATIVE SHAPES
+   ========================================================= */
+
+.hero-decoration {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+/* Large circle */
+
+.shape-one {
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    right: 12%;
+    top: 12%;
+
+    border: 4px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 50%;
+
+    transform: rotate(-20deg);
+
+    animation:
+        floatingShape 6s ease-in-out infinite,
+        rotateSlowly 18s linear infinite;
+}
+
+
+/* Small square */
+
+.shape-two {
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    right: 28%;
+    bottom: 15%;
+
+    border: 5px solid #ffffff;
+
+    transform: rotate(25deg);
+
+    opacity: 0.25;
+
+    animation: floatingShape 5s ease-in-out 1s infinite;
+}
+
+
+/* Red slash */
+
+.shape-three {
+    position: absolute;
+
+    width: 420px;
+    height: 15px;
+
+    right: 2%;
+    bottom: 30%;
+
+    background: #ffffff;
+
+    transform:
+        rotate(-25deg)
+        skewX(-20deg);
+
+    opacity: 0.18;
+
+    animation: slashMove 5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   SMALL SCREEN DECORATION
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero::after {
+        width: 100vw;
+        height: 80%;
+
+        right: -50%;
+        top: 45%;
+
+        transform: rotate(-15deg);
+    }
+
+    .hero-content {
+        margin-left: 7vw;
+    }
+
+    .shape-one {
+        width: 180px;
+        height: 180px;
+
+        right: -30px;
+        top: 12%;
+    }
+
+    .shape-two {
+        right: 12%;
+        bottom: 10%;
+    }
+
+    .shape-three {
+        right: -80px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        align-items: center;
+
+        background-position: center;
+    }
+
+    .hero::before {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(0, 0, 0, 0.92),
+                rgba(0, 0, 0, 0.65)
+            );
+    }
+
+    .hero::after {
+        opacity: 0.55;
+
+        right: -70%;
+        top: 55%;
+    }
+
+    .hero-content {
+        width: 88%;
+        margin-left: 6%;
+    }
+
+    .eyebrow {
+        font-size: 9px;
+
+        padding: 6px 10px;
+
+        letter-spacing: 2px;
+    }
+
+    h1 {
+        font-size: clamp(65px, 19vw, 95px);
+
+        line-height: 0.8;
+
+        letter-spacing: -2px;
+    }
+
+    h1 span {
+        transform: translateX(10px);
+    }
+
+    h1 span:hover {
+        transform:
+            translateX(15px)
+            scale(1.02);
+    }
+
+    .description {
+        margin-top: 24px;
+
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+    .start-button {
+        margin-top: 28px;
+
+        padding: 15px 18px;
+
+        font-size: 11px;
+
+        box-shadow:
+            6px 6px 0 #e00000;
+    }
+
+    .shape-one {
+        width: 130px;
+        height: 130px;
+
+        right: -45px;
+        top: 8%;
+    }
+
+    .shape-two {
+        width: 65px;
+        height: 65px;
+
+        right: 8%;
+        bottom: 8%;
+    }
+
+    .shape-three {
+        width: 250px;
+        height: 10px;
+
+        right: -100px;
+        bottom: 24%;
+    }
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes contentReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-50px)
+            skewX(-3deg);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            skewX(0);
+    }
+}
+
+
+@keyframes titleReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-80px)
+            rotate(-4deg)
+            skew(-5deg);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            rotate(0)
+            skew(-5deg);
+    }
+}
+
+
+@keyframes slideFromLeft {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+@keyframes buttonReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            skew(-10deg);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            skew(-10deg);
+    }
+}
+
+
+@keyframes floatingShape {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(25deg);
+    }
+
+    50% {
+        transform:
+            translateY(-18px)
+            rotate(32deg);
+    }
+}
+
+
+@keyframes rotateSlowly {
+
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
+
+
+@keyframes slashMove {
+
+    0%,
+    100% {
+        transform:
+            translateX(0)
+            rotate(-25deg)
+            skewX(-20deg);
+    }
+
+    50% {
+        transform:
+            translateX(-35px)
+            rotate(-25deg)
+            skewX(-20deg);
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =========================================================
+   SKILLBRIDGE - ROADMAP SYSTEM
+   Persona 5 Royal-inspired
+   ========================================================= */
+
+.roadmap-page {
+    position: relative;
+    min-height: 100vh;
+    padding: 60px 20px;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(0, 0, 0, 0.96),
+            rgba(20, 0, 0, 0.92)
+        ),
+        url("../images/background.jpg") center / cover no-repeat;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   RED DIAGONAL
+   ========================================================= */
+
+.roadmap-page::before {
+    content: "";
+
+    position: absolute;
+    width: 900px;
+    height: 180%;
+    right: -350px;
+    top: -35%;
+
+    background: #c90000;
+
+    transform: rotate(-12deg);
+
+    opacity: 0.75;
+
+    z-index: -2;
+
+    pointer-events: none;
+}
+
+
+.roadmap-page::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            transparent 0,
+            transparent 18px,
+            rgba(255,255,255,0.025) 19px,
+            rgba(255,255,255,0.025) 20px
+        );
+
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.roadmap-container {
+    position: relative;
+
+    width: min(1200px, 94%);
+
+    margin: auto;
+
+    padding: 35px;
+
+    background: rgba(5, 5, 5, 0.88);
+
+    border: 3px solid #ffffff;
+
+    transform: skewX(-1deg);
+
+    box-shadow:
+        14px 14px 0 #d00000,
+        25px 25px 0 rgba(0,0,0,0.8);
+
+    animation: roadmapReveal 0.7s ease-out both;
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.roadmap-label {
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    margin-bottom: 30px;
+
+    background: #000000;
+
+    border-left: 6px solid #e00000;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    transform: skewX(-8deg);
+
+    box-shadow:
+        5px 5px 0 #ffffff;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.roadmap-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 30px;
+
+    padding-bottom: 30px;
+
+    border-bottom: 3px solid #ffffff;
+}
+
+
+.roadmap-kicker {
+    margin-bottom: 8px;
+
+    color: #e00000;
+
+    font-size: 13px;
+    font-weight: 900;
+
+    letter-spacing: 4px;
+}
+
+
+.roadmap-header h1 {
+    margin: 0;
+
+    font-family: 'Anton', Impact, sans-serif;
+
+    font-size: clamp(55px, 8vw, 105px);
+
+    line-height: 0.85;
+
+    color: #ffffff;
+
+    text-shadow:
+        7px 7px 0 #e00000;
+
+    transform: skew(-5deg);
+}
+
+
+.roadmap-header p {
+    max-width: 650px;
+
+    margin-top: 22px;
+
+    color: rgba(255,255,255,0.72);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   XP
+   ========================================================= */
+
+.roadmap-xp {
+    min-width: 170px;
+
+    padding: 18px;
+
+    text-align: center;
+
+    background: #e00000;
+
+    border: 3px solid #ffffff;
+
+    transform: rotate(-3deg) skew(-5deg);
+
+    box-shadow:
+        8px 8px 0 #000000;
+}
+
+
+.roadmap-xp span {
+    display: block;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+
+.roadmap-xp strong {
+    display: block;
+
+    margin-top: 5px;
+
+    font-family: 'Anton', Impact, sans-serif;
+
+    font-size: 42px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.roadmap-progress {
+    margin: 35px 0;
+}
+
+
+.progress-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 10px;
+
+    font-size: 12px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+
+.progress-top strong {
+    color: #e00000;
+
+    font-size: 18px;
+}
+
+
+.progress-track {
+    position: relative;
+
+    width: 100%;
+    height: 18px;
+
+    background: #151515;
+
+    border: 3px solid #ffffff;
+
+    transform: skewX(-12deg);
+
+    overflow: hidden;
+}
+
+
+.progress-fill {
+    height: 100%;
+
+    background: #e00000;
+
+    box-shadow:
+        5px 0 0 #ffffff;
+
+    transition:
+        width 0.7s ease;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
+
+.section-title {
+    display: inline-block;
+
+    margin-bottom: 25px;
+    padding: 9px 16px;
+
+    background: #ffffff;
+
+    color: #000000;
+
+    font-size: 12px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    transform: skewX(-8deg);
+
+    box-shadow:
+        6px 6px 0 #e00000;
+}
+
+
+/* =========================================================
+   LESSON ROADMAP
+   ========================================================= */
+
+.lesson-roadmap {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   ROADMAP CARD
+   ========================================================= */
+
+.roadmap-card {
+    position: relative;
+
+    display: flex;
+
+    gap: 25px;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #111111,
+            #080808
+        );
+
+    border: 3px solid #ffffff;
+
+    transform: skewX(-2deg);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.roadmap-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 8px;
+    height: 100%;
+
+    background: #e00000;
+}
+
+
+.roadmap-card:hover {
+    background:
+        linear-gradient(
+            110deg,
+            #1c0000,
+            #090909
+        );
+
+    transform:
+        translateX(8px)
+        skewX(-2deg);
+
+    box-shadow:
+        10px 10px 0 #e00000;
+}
+
+
+/* =========================================================
+   NUMBER
+   ========================================================= */
+
+.roadmap-number {
+    flex-shrink: 0;
+
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e00000;
+
+    border: 3px solid #ffffff;
+
+    color: #ffffff;
+
+    font-family: 'Anton', Impact, sans-serif;
+
+    font-size: 30px;
+
+    transform: rotate(-5deg);
+
+    box-shadow:
+        6px 6px 0 #000000;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.roadmap-content {
+    flex: 1;
+}
+
+
+.roadmap-status {
+    margin-bottom: 8px;
+
+    color: #e00000;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+
+.roadmap-content h2 {
+    margin-bottom: 10px;
+
+    font-family: 'Anton', Impact, sans-serif;
+
+    font-size: clamp(28px, 4vw, 45px);
+
+    line-height: 0.95;
+
+    text-transform: uppercase;
+
+    font-style: italic;
+
+    text-shadow:
+        4px 4px 0 #000000;
+}
+
+
+.roadmap-content p {
+    max-width: 800px;
+
+    color: rgba(255,255,255,0.7);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BOTTOM
+   ========================================================= */
+
+.roadmap-bottom {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+.roadmap-bottom > span {
+    padding: 7px 11px;
+
+    background: #ffffff;
+
+    color: #000000;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    transform: skewX(-8deg);
+}
+
+
+/* =========================================================
+   ENTER MODULE
+   ========================================================= */
+
+.roadmap-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-left: auto;
+
+    padding: 12px 18px;
+
+    background: #000000;
+
+    border: 3px solid #ffffff;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    transform: skewX(-10deg);
+
+    box-shadow:
+        6px 6px 0 #e00000;
+
+    transition:
+        0.25s ease;
+}
+
+
+.roadmap-button b {
+    font-size: 20px;
+}
+
+
+.roadmap-button:hover {
+    background: #e00000;
+
+    transform:
+        translate(-3px,-3px)
+        skewX(-10deg);
+
+    box-shadow:
+        9px 9px 0 #ffffff;
+}
+
+
+/* =========================================================
+   EMPTY ROADMAP
+   ========================================================= */
+
+.empty-roadmap {
+    padding: 50px 30px;
+
+    text-align: center;
+
+    border: 3px dashed #ffffff;
+
+    background: rgba(0,0,0,0.65);
+}
+
+
+.empty-roadmap h2 {
+    font-family: 'Anton', Impact, sans-serif;
+
+    font-size: 40px;
+
+    color: #e00000;
+}
+
+
+.empty-roadmap p {
+    margin-top: 10px;
+
+    color: rgba(255,255,255,0.7);
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.roadmap-navigation {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 40px;
+
+    padding-top: 25px;
+
+    border-top: 3px solid #ffffff;
+}
+
+
+.back-button,
+.reset-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 12px 18px;
+
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    transform: skewX(-10deg);
+
+    transition: 0.25s ease;
+}
+
+
+.back-button {
+    color: #ffffff;
+
+    background: #000000;
+
+    border: 2px solid #ffffff;
+}
+
+
+.reset-button {
+    color: #ffffff;
+
+    background: #650000;
+
+    border: 2px solid #e00000;
+}
+
+
+.back-button:hover,
+.reset-button:hover {
+    transform:
+        translateY(-3px)
+        skewX(-10deg);
+
+    box-shadow:
+        6px 6px 0 #ffffff;
+}
+
+
+/* =========================================================
+   ROADMAP ANIMATION
+   ========================================================= */
+
+@keyframes roadmapReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            skewX(-1deg);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            skewX(-1deg);
+    }
+}
+
+
+/* =========================================================
+   ROADMAP MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .roadmap-page {
+        padding: 30px 12px;
+    }
+
+    .roadmap-container {
+        width: 100%;
+
+        padding: 22px;
+    }
+
+    .roadmap-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .roadmap-xp {
+        width: 100%;
+    }
+
+    .roadmap-card {
+        padding: 20px;
+
+        gap: 18px;
+    }
+
+    .roadmap-number {
+        width: 55px;
+        height: 55px;
+
+        font-size: 24px;
+    }
+
+    .roadmap-button {
+        margin-left: 0;
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .roadmap-navigation {
+        flex-direction: column;
+    }
+
+    .back-button,
+    .reset-button {
+        width: 100%;
+
+        justify-content: center;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .roadmap-container {
+        padding: 18px;
+    }
+
+    .roadmap-header h1 {
+        font-size: 52px;
+    }
+
+    .roadmap-card {
+        flex-direction: column;
+    }
+
+    .roadmap-number {
+        width: 60px;
+        height: 60px;
+    }
+
+    .roadmap-bottom {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .roadmap-bottom > span {
+        width: fit-content;
+    }
+}
+
+/* =========================================================
+   SKILLBRIDGE NAVBAR
+   ========================================================= */
+
+.skillbridge-navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 40px;
+
+    background: rgba(0, 0, 0, 0.92);
+
+    border-bottom: 2px solid #ffffff;
+
+    z-index: 9999;
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* LOGO */
+
+.navbar-logo {
+    font-family: 'Anton', Impact, sans-serif;
+
+    font-size: 26px;
+
+    font-style: italic;
+
+    letter-spacing: 1px;
+
+    transform: skew(-8deg);
+
+    color: #ffffff;
+}
+
+
+.navbar-logo span {
+    color: #d90000;
+
+    margin-left: 4px;
+}
+
+
+/* LINKS */
+
+.navbar-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.navbar-link {
+    position: relative;
+
+    padding: 10px 14px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.navbar-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 12px;
+    right: 12px;
+
+    bottom: 4px;
+
+    height: 3px;
+
+    background: #d90000;
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.navbar-link:hover {
+    background: #d90000;
+
+    transform: skew(-8deg);
+}
+
+
+.navbar-link:hover::after,
+.navbar-link.active::after {
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   HERO OFFSET
+   ========================================================= */
+
+.hero {
+    padding-top: 70px;
+}
+
+
+/* =========================================================
+   MOBILE NAVBAR
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .skillbridge-navbar {
+        height: 60px;
+
+        padding: 0 15px;
+    }
+
+
+    .navbar-logo {
+        font-size: 20px;
+    }
+
+
+    .navbar-links {
+        gap: 2px;
+    }
+
+
+    .navbar-link {
+        padding: 8px 7px;
+
+        font-size: 8px;
+
+        letter-spacing: 0.8px;
+    }
+
+
+    .navbar-link::after {
+        left: 7px;
+        right: 7px;
+    }
+
+
+    .hero {
+        padding-top: 60px;
+    }
+
+}

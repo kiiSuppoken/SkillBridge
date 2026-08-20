@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Progress - SkillBridge</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/progress.css') }}">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    {% include "components/navbar.html" %}
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="progress-page">
+
+        <div class="progress-container">
+
+
+            <!-- =====================================================
+                 LABEL
+            ====================================================== -->
+
+            <div class="progress-label">
+
+                SKILLBRIDGE // PLAYER STATUS
+
+            </div>
+
+
+            <!-- =====================================================
+                 HEADER
+            ====================================================== -->
+
+            <header class="progress-header">
+
+                <div>
+
+                    <div class="progress-kicker">
+
+                        YOUR PROGRESS
+
+                    </div>
+
+
+                    <h1>
+
+                        HELLO,
+                        <span>{{ username.upper() }}</span>
+
+                    </h1>
+
+
+                    <p>
+
+                        Track your skills, XP,
+                        and career training progress.
+
+                    </p>
+
+                </div>
+
+
+                <!-- =================================================
+                     LEVEL
+                ================================================== -->
+
+                <div class="level-card">
+
+                    <span>
+
+                        CURRENT LEVEL
+
+                    </span>
+
+
+                    <strong>
+
+                        {{ level }}
+
+                    </strong>
+
+                </div>
+
+            </header>
+
+
+            <!-- =====================================================
+                 CAREER
+            ====================================================== -->
+
+            <section class="career-panel">
+
+                <div class="career-panel-label">
+
+                    CURRENT CAREER PATH
+
+                </div>
+
+
+                <h2>
+
+                    {{ career.replace('_', ' ').upper() }}
+
+                </h2>
+
+            </section>
+
+
+            <!-- =====================================================
+                 XP + QUEST
+            ====================================================== -->
+
+            <section class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <span>
+
+                        TOTAL XP
+
+                    </span>
+
+
+                    <strong>
+
+                        {{ xp }}
+
+                    </strong>
+
+
+                    <small>
+
+                        EXPERIENCE POINTS
+
+                    </small>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+
+                        QUEST COMPLETED
+
+                    </span>
+
+
+                    <strong>
+
+                        {{ completed_count }}
+
+                    </strong>
+
+
+                    <small>
+
+                        COMPLETED MISSIONS
+
+                    </small>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =====================================================
+                 ROADMAP PROGRESS
+            ====================================================== -->
+
+            <section class="progress-card">
+
+                <div class="card-label">
+
+                    CAREER ROADMAP PROGRESS
+
+                </div>
+
+
+                <div class="progress-score">
+
+                    {{ progress }}%
+
+                </div>
+
+
+                <div class="progress-track">
+
+                    <div
+                        class="progress-fill"
+                        style="width: {{ progress }}%;">
+
+                    </div>
+
+                </div>
+
+
+                <p>
+
+                    Keep completing quests
+                    to advance your career roadmap.
+
+                </p>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SKILL STATUS
+            ====================================================== -->
+
+            <section class="skills-card">
+
+                <div class="card-label">
+
+                    SKILL STATUS
+
+                </div>
+
+
+                {% if skill_analysis.skill_status %}
+
+
+                    {% for skill, data in skill_analysis.skill_status.items() %}
+
+
+                    <div class="skill-row">
+
+
+                        <div class="skill-row-top">
+
+                            <span>
+
+                                {{ skill.replace('_', ' ').title() }}
+
+                            </span>
+
+
+                            <strong>
+
+                                {{ data.score }}%
+
+                            </strong>
+
+                        </div>
+
+
+                        <div class="skill-track">
+
+                            <div
+                                class="skill-fill"
+                                style="width: {{ data.score }}%;">
+
+                            </div>
+
+                        </div>
+
+
+                        <small>
+
+                            {{ data.status }}
+
+                        </small>
+
+
+                    </div>
+
+
+                    {% endfor %}
+
+
+                {% else %}
+
+                    <p class="empty-text">
+
+                        Belum ada data skill.
+
+                    </p>
+
+                {% endif %}
+
+            </section>
+
+
+            <!-- =====================================================
+                 SKILL ANALYSIS
+            ====================================================== -->
+
+            <section class="analysis-grid">
+
+
+                <div class="analysis-box">
+
+                    <span>
+
+                        STRONGEST SKILL
+
+                    </span>
+
+
+                    <strong>
+
+                        {% if skill_analysis.strongest %}
+
+                            {{
+                                skill_analysis.strongest
+                                .replace('_', ' ')
+                                .upper()
+                            }}
+
+                        {% else %}
+
+                            -
+
+                        {% endif %}
+
+                    </strong>
+
+                </div>
+
+
+                <div class="analysis-box">
+
+                    <span>
+
+                        NEEDS IMPROVEMENT
+
+                    </span>
+
+
+                    <strong>
+
+                        {% if skill_analysis.weakest %}
+
+                            {{
+                                skill_analysis.weakest
+                                .replace('_', ' ')
+                                .upper()
+                            }}
+
+                        {% else %}
+
+                            -
+
+                        {% endif %}
+
+                    </strong>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =====================================================
+                 NAVIGATION
+            ====================================================== -->
+
+            <div class="progress-navigation">
+
+
+                <a
+                    href="{{ url_for(
+                        'learning',
+                        career=career
+                    ) }}"
+                    class="nav-button">
+
+                    ← ROADMAP
+
+                </a>
+
+
+                <a
+                    href="{{ url_for('home') }}"
+                    class="nav-button">
+
+                    HOME
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>
